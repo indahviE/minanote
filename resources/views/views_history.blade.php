@@ -15,8 +15,8 @@
         @include('components.sidebar')
 
         <div class="w-full p-12 bg-white">
-            <div class="flex justify-between items-center mb-6">
-                <h1 class="text-2xl font-bold">Data Peminjaman</h1>
+            <div class="flex justify-between items-center mb-3">
+                <h1 class="text-2xl font-bold">Data History Peminjaman</h1>
                 <!-- <div class="space-x-2">
                 <button class="px-4 py-2 bg-gray-200 text-sm rounded hover:bg-gray-300">Download CSV</button>
                 <button class="px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800">Invite Organization</button>
@@ -24,17 +24,7 @@
             </div>
             <div class="flex items-end gap-2  mb-4 ">
 
-                <a href="/peminjaman/create"
-                    class="inline-flex text-sm items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 4v16m8-8H4" />
-                    </svg>
-                    Lakukan Peminjaman Barang
-                </a>
-
-                <div class="text-gray-400 text-sm mb-2 ms-auto">
+                <div class="text-gray-400 text-sm ms-auto">
                     Menampilkan {{count($peminjaman)}} dari total {{count($peminjaman)}} data
                 </div>
 
@@ -93,20 +83,14 @@
                             </td>
 
                             <td>
-                                <div class="rounded-md bg-indigo-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
-                                    Dipinjam
+                                <div class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+                                    Selesai
                                 </div>
                             </td>
 
                             <td class="px-4 py-2">
                                 <div class="flex gap-1 flex-col">
-                                    <form action="/peminjaman/done/{{$data->id}}" method="post">
-                                        @csrf
-                                        <button onclick="return confirm('Apakah barang benar sudah dikembalikan? (jika iya maka peminjaman ini akan dianggap selesai)')" type="submit" class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
-                                            Barang telah dikembalikan
-                                        </button>
-                                    </form>
-
+                                   
                                     <form action="/peminjaman/delete/{{$data->id}}" method="post">
                                         @csrf
 

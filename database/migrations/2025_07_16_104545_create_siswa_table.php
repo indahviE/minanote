@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_siswa');
             $table->string('kelas');
+            $table->string('jurusan');
             $table->string('nisn');
             $table->timestamps();
         });

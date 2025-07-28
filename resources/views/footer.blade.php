@@ -1,8 +1,8 @@
 <!-- Call To Action -->
 <section class="bg-gray-900 text-white py-12 rounded-2xl mx-2">
   <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-6 md:mb-0">Ready to join with us?</h2>
-    <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Get Started →</a>
+    <h2 class="text-2xl md:text-3xl font-semibold mb-6 md:mb-0">Sudah Siap Meminjam Barang Dari Kami?</h2>
+    <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Datang Segera Ke Milanote →</a>
   </div>
 </section>
 
@@ -12,7 +12,7 @@
     
     <!-- Logo & Address -->
     <div>
-      <h3 class="font-bold text-lg text-blue-600 mb-2">UP School</h3>
+      <h3 class="font-bold text-lg text-blue-600 mb-2">Minanote</h3>
       <p class="mb-2">Madison Avenue 10-12,<br>New York, United States</p>
       <div class="flex space-x-4 mt-4 text-gray-500">
         <a href="#"><i class="fab fa-facebook-f"></i>📘</a>

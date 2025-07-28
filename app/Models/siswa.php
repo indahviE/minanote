@@ -15,6 +15,7 @@ class siswa extends Model
         'id',
         'nama_siswa',
         'kelas',
+        'jurusan',
         'nisn'
     ];
 }

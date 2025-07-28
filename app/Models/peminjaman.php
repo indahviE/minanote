@@ -25,20 +25,19 @@ class peminjaman extends Model
     ];
 
     public function siswa(){
-        return $this->belongsTo(siswa::class('siswa_id', 'id'));
+        return $this->belongsTo(siswa::class, 'siswa_id', 'id');
     }
 
     public function guru(){
-        return $this->belongsTo(guru::class('guru_id', 'id'));
+        return $this->belongsTo(guru::class, 'guru_id', 'id');
     }
 
     public function barang(){
-        return $this->belongsTo(barang::class('barang_id', 'id'));
+        return $this->belongsTo(barang::class, 'barang_id', 'id');
     }
 
     public function admin(){
-        return $this->belongsTo(admin::class('admin_id', 'id'));
+        return $this->belongsTo(admin::class, 'admin_id', 'id');
     }
-
 
 }
