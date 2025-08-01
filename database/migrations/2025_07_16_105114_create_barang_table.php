@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
             $table->string('nama_brg');
+            $table->string('foto');
             $table->string('stock');
-            $table->string('jml_pinjam');
             $table->string('kelayakan');
             $table->string('deskripsi');
             $table->timestamps();

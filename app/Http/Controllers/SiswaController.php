@@ -5,16 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\siswa;
 use Illuminate\Http\Request;
 use Psy\TabCompletion\Matcher\FunctionsMatcher;
+use Illuminate\Support\Facades\Auth;
 
 class SiswaController extends Controller
 {
     //
 
-    public function views_siswa()
+    public function views_siswa(Request $request)
     {
-        $siswa = siswa::all();
+        
+        if($request->s){
+            $search = $request->s;
+            $siswa = siswa::where("nama_siswa", "LIKE", '%' . $search . '%')->get();
+        }else{
+            $siswa = siswa::all();
+            $search = "";
+        }
 
-        return view('views_siswa', ['siswa' => $siswa]);
+        return view('views_siswa', ['siswa' => $siswa, 'search_key' => $search]);
     }
 
     public function views_create_siswa()
@@ -38,6 +46,7 @@ class SiswaController extends Controller
         siswa::create([
             'nama_siswa' => $request->nama_siswa,
             'kelas' => $request->kelas,
+            'jurusan' => $request->jurusan,
             'nisn' => $request->nisn
         ]);
 
@@ -51,6 +60,7 @@ class SiswaController extends Controller
         siswa::update([
             'nama_siswa' => $request->nama_siswa,
             'kelas' => $request->kelas,
+            'jurusan' => $request->jurusan,
             'nisn' => $request->nisn
         ]);
 
