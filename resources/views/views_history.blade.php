@@ -47,7 +47,7 @@
                     <tbody class="divide-y">
                         @foreach($peminjaman as $data)
                         <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2">1</td>
+                            <td class="px-4 py-2">{{$loop->iteration}}</td>
                             <td class="px-4 py-2">
                                 <div class="flex items-center space-x-2">
                                     <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" alt="Logo" class="w-6 h-6 rounded-full">

@@ -36,7 +36,7 @@
                         <label class="block text-sm font-medium text-gray-400 ">Barang Yang Akan Dipinjam</label>
                         <select name="barang_id" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
                             @foreach($barang as $data)
-                            <option value="{{$data->id}}">{{$data->nama_brg}}</option>
+                            <option value="{{$data->id}}">{{$data->nama_barang}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -116,7 +116,7 @@
                         <label class="block text-sm font-medium text-gray-400 ">Barang Yang Akan Dipinjam</label>
                         <select name="barang_id" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
                             @foreach($barang as $data)
-                            <option value="{{$data->id}}">{{$data->nama_brg}}</option>
+                            <option value="{{$data->id}}">{{$data->nama_barang}}</option>
                             @endforeach
                         </select>
                     </div>

@@ -57,7 +57,7 @@
                     <tbody class="divide-y">
                         @foreach($peminjaman as $data)
                         <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2">1</td>
+                            <td class="px-4 py-2">{{$loop->iteration}}</td>
                             <td class="px-4 py-2">
                                 <div class="flex items-center space-x-2">
                                     <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" alt="Logo" class="w-6 h-6 rounded-full">
@@ -103,7 +103,7 @@
                                     <form action="/peminjaman/done/{{$data->id}}" method="post">
                                         @csrf
                                         <button onclick="return confirm('Apakah barang benar sudah dikembalikan? (jika iya maka peminjaman ini akan dianggap selesai)')" type="submit" class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
-                                            Barang telah dikembalikan
+                                            Barang dikembalikan
                                         </button>
                                     </form>
 

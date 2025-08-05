@@ -57,14 +57,14 @@ class SiswaController extends Controller
     {
         $siswa = siswa::findOrFail($id);
 
-        siswa::update([
+        $siswa->update([
             'nama_siswa' => $request->nama_siswa,
             'kelas' => $request->kelas,
             'jurusan' => $request->jurusan,
             'nisn' => $request->nisn
         ]);
 
-        return redirect('/siswa');
+        return redirect('/siswa')->with('oke', 'Data Telah di Update');
     }
 
     public function delete_siswa(Request $request, $id)

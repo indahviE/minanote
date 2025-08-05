@@ -88,7 +88,7 @@ bg-white">
             </div>
 
             <!-- Title -->
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">{{$barang->nama_brg}}</h1>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">{{$barang->nama_barang}}</h1>
 
             <!-- Description -->
             <p class="text-gray-600 mb-4">

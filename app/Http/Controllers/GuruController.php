@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\guru;
+use App\Models\siswa;
 use Illuminate\Http\Request;
+use Psy\TabCompletion\Matcher\FunctionsMatcher;
+use Illuminate\Support\Facades\Auth;
 
 class GuruController extends Controller
 {
     //
 
-    public function views_guru()
+    public function views_guru(Request $request)
     {
-        $guru = guru::all();
+        
+        if($request->g){
+            $search = $request->g;
+            $guru = guru::where("nama_guru", "LIKE", '%' . $search . '%')->get();
+        }else{
+            $guru = guru::all();
+            $search = "";
+        }
 
-        return view('views_guru', ['guru' => $guru]);
+        return view('views_guru', ['guru' => $guru, 'search_key' => $search]);
     }
 
     public function views_create_guru()
@@ -47,7 +57,7 @@ class GuruController extends Controller
         $guru = guru::findOrFail($id);
 
         guru::update([
-            'nama_guru' => $request->nama_guru,
+           'nama_guru' => $request->nama_guru,
             'no_telp' => $request->no_telp
         ]);
 
@@ -62,5 +72,4 @@ class GuruController extends Controller
 
         return redirect('/guru');
     }
-
 }
