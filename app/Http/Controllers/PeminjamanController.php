@@ -58,7 +58,8 @@ class PeminjamanController extends Controller
             'tgl_kembali' => $request->tgl_kembali,
             'jml_pinjam' => $request->jml_pinjam,
             'status' => "Dipinjam",
-            'entitas_peminjam' => $request->entitas_peminjam
+            'entitas_peminjam' => $request->entitas_peminjam,
+            'gender' =>$request->gender
         ]);
 
         // jika sudah pinjam maka kurangi stok barang
@@ -66,7 +67,7 @@ class PeminjamanController extends Controller
             'stock' => $barang->stock - $request->jml_pinjam
         ]);
 
-        return redirect('/peminjaman');
+        return redirect('/peminjaman')->with('succes', 'Data berhasil dibuat!');
     }
 
     public function update_peminjaman(Request $request, $id)
@@ -82,10 +83,11 @@ class PeminjamanController extends Controller
             'tgl_kembali' => $request->tgl_kembali,
             'jml_pinjam' => $request->jml_pinjam,
             'status' => $request->status,
-            'entitas_peminjam' => $request->entitas_peminjam
+            'entitas_peminjam' => $request->entitas_peminjam,
+            'gender' =>$request->gender
         ]);
 
-        return redirect('/peminjaman');
+        return redirect('/peminjaman')->with('ok', 'Data berhasil ter-update!');
     }
 
     public function delete_peminjaman(Request $request, $id)
@@ -94,7 +96,7 @@ class PeminjamanController extends Controller
 
         $peminjaman->delete();
 
-        return redirect('/peminjaman');
+        return redirect('/peminjaman')->with('oke', 'Data berhasil terhapus!');
     }
 
     public function views_history()

@@ -6,9 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Minanote</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display:none;
+    }
+    .scrollbar-hide{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </head>
 
-<body class="font-sans antialiased text-gray-700">
+<body class="font-sans antialiased text-gray-700 overflow-x-hidden">
 
 
   <!-- Navbar -->
@@ -74,6 +83,7 @@ bg-white">
       </div>
       <div>
         <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998" alt="Students" class="rounded-xl shadow-lg" />
+        {{-- <img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?fm=jpg&amp;q=60&amp;w=3000&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Students" class="rounded-xl shadow-lg" /> --}}
       </div>
     </section>
 
@@ -107,16 +117,16 @@ bg-white">
       <h2 class="text-2xl font-semibold mb-10">Barang Yang Kami Sediakan, hanya untuk anda!</h2>
 
       <!-- Product Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class=" gap-6 flex overflow-x-auto p-4 max-w-full scrollbar-hide">
+        <div class=" gap-6 flex items-start max-w-[2400px]">
         <!-- Product Card -->
-
         @foreach($barang as $data)
-        <div class="relative bg-white rounded-xl shadow-md overflow-hidden flex flex-col p-4 hover:shadow-2xl transition">
+        <div class="relative bg-white w-[2000px] h-[500px] rounded-xl shadow-md overflow-x-auto flex flex-col p-4 hover:shadow-2xl transition">
           <img src="{{$data->foto}}" alt="Product" class="w-full h-36 object-contain mb-3">
           <h3 class="text-sm font-semibold">{{$data->nama_brg}}</h3>
-          <p class="text-xs text-gray-500 mb-1">{{$data->deskripsi}}</p>
+          <p class="text-xs text-gray-500 mb-1 h-48">{{$data->deskripsi}}</p>
           <p class="text-green-600 text-xs mb-1">⭐⭐⭐⭐⭐ (stock {{$data->stock}})</p>
-          <p class="font-semibold text-sm mb-2">Kelayakan Barang : {{$data->kelayakan}}</p>
+          <p class="font-semibold text-sm mb-2 h-7">Kelayakan Barang : {{$data->kelayakan}}</p>
           @if($data->stock <= 0)
             <button class="absolute bg-blue-300 text-white text-xs px-3 py-2 rounded-full" disabled>Stok Sedang Kosong</button>
             @else
@@ -128,6 +138,7 @@ bg-white">
         @endforeach
 
         <!-- Tambahkan produk lainnya sesuai kebutuhan -->
+      </div>
       </div>
     </section>
 

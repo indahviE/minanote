@@ -24,21 +24,22 @@
             </div>
             <div class="flex items-end gap-2  mb-4 ">
                 <form class="flex items-center w-5/12" method="get">
-                    <input type="text" name="s" value="{{$search_key}}" placeholder="Cari berdasarkan nama siswa.." class="w-full px-4 py-2 border text-gray-600 rounded-md">
+                    <input type="text" name="s" value="{{ $search_key }}"
+                        placeholder="Cari berdasarkan nama siswa.."
+                        class="w-full px-4 py-2 border text-gray-600 rounded-md">
                 </form>
 
                 <a href="/siswa/create"
                     class="inline-flex text-sm items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 4v16m8-8H4" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                     </svg>
                     Tambah Data
                 </a>
 
                 <div class="text-gray-400 text-sm mb-2 ms-auto">
-                    Menampilkan {{count($siswa)}} dari total {{count($siswa)}} data
+                    Menampilkan {{ count($siswa) }} dari total {{ count($siswa) }} data
                 </div>
 
             </div>
@@ -50,47 +51,111 @@
                             <th class="px-4 py-2 font-medium">#</th>
                             <th class="px-4 py-2 font-medium">Nama/NISN</th>
                             <th class="px-4 py-2 font-medium">Kelas</th>
+                            <th class="px-4 py-2 font-medium">Gender</th>
 
                             <th class="px-4 py-2 font-medium">Aksi</th>
 
                         </tr>
                     </thead>
+
+                    {{-- alert for update --}}
+                    @if (Session::has('ok'))
+                        <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                            role="alert">
+                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium">{{ Session::get('ok') }}</span>
+                            </div>
+                        </div>
+                    @endif
+
+                    {{-- alert for create --}}
+                    @if (Session::has('succes'))
+                        <div class="flex items-center p-4 mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800"
+                            role="alert">
+                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium">{{ Session::get('succes') }}</span>
+                            </div>
+                        </div>
+                    @endif
+
+                    {{-- alert for delete --}}
+                    @if (Session::has('okk'))
+                        <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                            role="alert">
+                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium">{{ Session::get('okk') }}</span>
+                            </div>
+                        </div>
+                    @endif
+                    
                     <tbody class="divide-y">
-                        @foreach($siswa as $data)
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2">{{$loop->iteration}}</td>
-                            <td class="px-4 py-2">
-                                <div class="flex items-center space-x-2">
-                                    <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" alt="Logo" class="w-6 h-6 rounded-full">
-                                    <div>
-                                        <div class="font-medium">{{$data->nama_siswa}}</div>
-                                        <div class="text-gray-500 text-xs">NISN ({{$data->nisn}})</div>
+                        @foreach ($siswa as $data)
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">{{ $loop->iteration }}</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex items-center space-x-2">
+                                        @if ($data->gender == 'lk')
+                                            <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg"
+                                                alt="Logo" class="w-6 h-6 rounded-full">
+                                        @endif
+
+                                        @if ($data->gender == 'pr')
+                                            <img src="https://img.freepik.com/premium-vector/indonesian-senior-high-school-student-cute-girl-character-kawaii-chibi_380474-601.jpg"
+                                                alt="Logo" class="w-6 h-6 rounded-full">
+                                        @endif
+
+                                        <div>
+                                            <div class="font-medium">{{ $data->nama_siswa }}</div>
+                                            <div class="text-gray-500 text-xs">NISN ({{ $data->nisn }})</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <div class="font-medium">{{$data->kelas}}</div>
-                                <div class="text-gray-500 text-xs">Jurusan {{$data->jurusan}}</div>
-                            </td>
+                                </td>
+                                <td class="px-4 py-2">
+                                    <div class="font-medium">{{ $data->kelas }}</div>
+                                    <div class="text-gray-500 text-xs">Jurusan {{ $data->jurusan }}</div>
+                                </td>
+                                <td class="px-4 py-2">
+                                    <div class="text-gray-500 text-xs"> {{ $data->gender }}</div>
+                                </td>
 
-                            <td class="px-4 py-2">
-                                <div class="flex gap-2">
-                                    <a href="/siswa/update/{{$data->id}}" class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
-                                        Modify Data
-                                    </a>
+                                <td class="px-4 py-2">
+                                    <div class="flex gap-2">
+                                        <a href="/siswa/update/{{ $data->id }}"
+                                            class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+                                            Modify Data
+                                        </a>
 
-                                    <form action="/siswa/delete/{{$data->id}}" method="post">
-                                        @csrf
+                                        <form action="/siswa/delete/{{ $data->id }}" method="post">
+                                            @csrf
 
-                                        <button type="submit" class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
-                                            Delete Data
-                                        </button>
-                                    </form>
+                                            <button onclick="return confirm('Apakah yakin data ingin dihapus?')" type="submit"
+                                                class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+                                                Delete Data
+                                            </button>
+                                        </form>
 
-                                </div>
-                            </td>
+                                    </div>
+                                </td>
 
-                        </tr>
+                            </tr>
                         @endforeach
 
                     </tbody>

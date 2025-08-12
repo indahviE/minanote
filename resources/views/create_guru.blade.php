@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Add Product</title>
+    <title>Ceate - Guru</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -20,14 +20,17 @@
                 @csrf
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Nama Guru</label>
-                    <input type="text" name="nama_guru" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama siswa..">
+                    <input type="text" name="nama_guru" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama guru.." required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">No Telp</label>
-                    <input type="text" name="no_telp" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa..">
+                    <input type="text" name="no_telp" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa.." required>
                 </div>
-                <!-- <div class="grid grid-cols-2 gap-4">
-                    <div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-400">Gender</label>
+                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr.." required>
+                </div>
+                        <!-- <div class="grid grid-cols-2 gap-4">
                         <label class="block text-sm font-medium text-gray-400">Category</label>
                         <select class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2">
                             <option>Men</option>

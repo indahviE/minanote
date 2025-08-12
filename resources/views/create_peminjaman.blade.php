@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Add Product</title>
+    <title>Create - Peminjaman</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -21,6 +21,10 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Entitas Yang Meminjam</label>
                     <input type="text" readonly value="Siswa" name="entitas_peminjam" class="w-full text-gray-600 mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama peminjaman..">
+                </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-400">Gender</label>
+                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400 ">Nama Siswa Yang Meminjam</label>
@@ -42,17 +46,17 @@
                     </div>
                     <div class="w-full">
                         <label class="block text-sm font-medium text-gray-400">Jumlah Pinjam</label>
-                        <input type="number" name="jml_pinjam" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan Jumlah Barang..">
+                        <input type="number" name="jml_pinjam" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan Jumlah Barang.." required>
                     </div>
                 </div>
                 <div class="flex gap-3">
                     <div class="w-full">
                         <label class="block text-sm font-medium text-gray-400">Tanggal Pinjam</label>
-                        <input type="date" name="tgl_pinjam" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas..">
+                        <input type="date" name="tgl_pinjam" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas.." required>
                     </div>
                     <div class="w-full">
                         <label class="block text-sm font-medium text-gray-400">Tanggal Kembali</label>
-                        <input type="date" name="tgl_kembali" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas..">
+                        <input type="date" name="tgl_kembali" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas.." required>
                     </div>
                 </div>
                 <!-- <div class="grid grid-cols-2 gap-4">
@@ -101,6 +105,10 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Entitas Yang Meminjam</label>
                     <input type="text" readonly value="Guru" name="entitas_peminjam" class="w-full text-gray-600 mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama peminjaman..">
+                </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-400">Gender</label>
+                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400 ">Nama Guru Yang Meminjam</label>

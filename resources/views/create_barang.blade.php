@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Add Product</title>
+    <title>Create - Barang</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -20,7 +20,7 @@
                 @csrf
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Nama Barang</label>
-                    <input type="text" name="nama_barang" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama barang..">
+                    <input type="text" name="nama_barang" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama barang.." required>
                 </div>
                  <div class="md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
@@ -38,15 +38,15 @@
                 </div> --}}
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Stock</label>
-                    <input type="number" name="stock" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan stock..">
+                    <input type="number" name="stock" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan stock.." required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Kelayakan</label>
-                    <input type="text" name="kelayakan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan kondisi..">
+                    <input type="text" name="kelayakan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan kondisi.." required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Deskripsi</label>
-                    <input type="text" name="deskripsi" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan deskripsi..">
+                    <input type="text" name="deskripsi" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan deskripsi.." required>
                 </div>
 
                 <!-- <div class="grid grid-cols-2 gap-4">

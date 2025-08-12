@@ -46,22 +46,24 @@ class GuruController extends Controller
 
         guru::create([
             'nama_guru' => $request->nama_guru,
-            'no_telp' => $request->no_telp
+            'no_telp' => $request->no_telp,
+            'gender' => $request->gender
         ]);
 
-        return redirect('/guru');
+        return redirect('/guru')->with('succes', 'Data berhasil dibuat!');
     }
 
     public function update_guru(Request $request, $id)
     {
         $guru = guru::findOrFail($id);
 
-        guru::update([
+        $guru->update([
            'nama_guru' => $request->nama_guru,
-            'no_telp' => $request->no_telp
+            'no_telp' => $request->no_telp,
+            'gender' => $request->gender
         ]);
 
-        return redirect('/guru');
+        return redirect('/guru')->with('ok', 'Data berhasil ter-update!');
     }
 
     public function delete_guru(Request $request, $id)
@@ -70,6 +72,6 @@ class GuruController extends Controller
 
         $guru->delete();
 
-        return redirect('/guru');
+        return redirect('/guru')->with('okk', 'Data berhasil dihapus!');
     }
 }

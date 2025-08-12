@@ -14,6 +14,7 @@ class guru extends Model
     protected $fillable = [
         'id',
         'nama_guru',
-        'no_telp'
+        'no_telp',
+        'gender'
     ];
 }

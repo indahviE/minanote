@@ -54,7 +54,13 @@ bg-white">
                 @foreach($orang_yang_meminjam as $data)
                 <div class="flex items-center bg-white p-4 shadow-md rounded-lg">
                     <div class="flex-shrink-0">
+                        @if ($data->gender == "lk")
                         <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" class="w-12 h-12 rounded-xl">
+                        @endif
+
+                        @if ($data->gender == "pr")
+                        <img src="https://img.freepik.com/premium-vector/indonesian-senior-high-school-student-cute-girl-character-kawaii-chibi_380474-601.jpg" alt="Logo" class="w-6 h-6 rounded-full">
+                        @endif
                     </div>
                     <div class="ml-4 flex-grow">
                         @if($data->entitas_peminjam == "Siswa")
@@ -99,7 +105,7 @@ bg-white">
             <div class="flex items-center gap-2 mb-4">
                 <div class="flex -space-x-2">
                     <img class="w-8 h-8 rounded-full border-2 border-white" src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" />
-                    <img class="w-8 h-8 rounded-full border-2 border-white" src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" />
+                    <img class="w-8 h-8 rounded-full border-2 border-white" src="https://img.freepik.com/premium-vector/indonesian-senior-high-school-student-cute-girl-character-kawaii-chibi_380474-601.jpg" />
                     <img class="w-8 h-8 rounded-full border-2 border-white" src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" />
                 </div>
                 <p class="text-green-600 text-sm mb-1">⭐⭐⭐⭐⭐ (stock yang tersedia {{$barang->stock}})</p>

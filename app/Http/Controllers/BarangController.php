@@ -64,7 +64,7 @@ class BarangController extends Controller
 
         // dd($request->all());
         barang::create($request->all()); 
-        return redirect('/barang')->with('ok', 'Tambah Data telah berhasil!');
+        return redirect('/barang')->with('succes', 'Data telah terbuat!');
     }
 
     public function update_barang(Request $request, $id)
@@ -81,7 +81,7 @@ class BarangController extends Controller
         }
 
         $barang->update($request->all());
-        return redirect('/kursus')->with('ok', 'Modify data berhasil!');
+        return redirect('/barang')->with('ok', 'Data telah ter-update');
     }
 
     public function delete_barang(Request $request, $id)
@@ -90,6 +90,6 @@ class BarangController extends Controller
 
         $barang->delete();
 
-        return redirect('/barang')->with('ok', 'Data Terhapus!');
+        return redirect('/barang')->with('okk', 'Data telah terhapus!');
     }
 }

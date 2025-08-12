@@ -48,20 +48,76 @@
                     <thead class="bg-gray-100 text-gray-700">
                         <tr>
                             <th class="px-4 py-2 font-medium">#</th>
-                            <th class="px-4 py-2 font-medium">Nama/NISN</th>
+                            <th class="px-4 py-2 font-medium">Nama Guru</th>
                             <th class="px-4 py-2 font-medium">No_telp</th>
+                            <th class="px-4 py-2 font-medium">gender</th>
 
                             <th class="px-4 py-2 font-medium">Aksi</th>
 
                         </tr>
                     </thead>
+                    {{-- alert for create --}}
+                    @if (Session::has('succes'))
+                        <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                            role="alert">
+                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium">{{ Session::get('succes') }}</span>
+                            </div>
+                        </div>
+                    @endif
+
+                    {{-- alert for update --}}
+                    @if (Session::has('ok'))
+                        <div class="flex items-center p-4 mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800"
+                            role="alert">
+                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium">{{ Session::get('ok') }}</span>
+                            </div>
+                        </div>
+                    @endif
+
+                    {{-- alert for delete --}}
+                    @if (Session::has('okk'))
+                        <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                            role="alert">
+                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium">{{ Session::get('okk') }}</span>
+                            </div>
+                        </div>
+                    @endif
+
                     <tbody class="divide-y">
                         @foreach($guru as $data)
                         <tr class="hover:bg-gray-50">
                             <td class="px-4 py-2">{{$loop->iteration}}</td>
                             <td class="px-4 py-2">
                                 <div class="flex items-center space-x-2">
+                                    @if ($data->gender == "lk")
                                     <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" alt="Logo" class="w-6 h-6 rounded-full">
+                                    @endif
+
+                                    @if ($data->gender == "pr")
+                                    <img src="https://img.freepik.com/premium-vector/indonesian-senior-high-school-student-cute-girl-character-kawaii-chibi_380474-601.jpg" alt="Logo" class="w-6 h-6 rounded-full">
+                                        
+                                    @endif
                                     <div>
                                         <div class="font-medium">{{$data->nama_guru}}</div>
                                         {{-- <div class="text-gray-500 text-xs">NISN ({{$data->nisn}})</div> --}}
@@ -70,6 +126,10 @@
                             </td>
                             <td class="px-4 py-2">
                                 <div class="font-medium">{{$data->no_telp}}</div>
+                                {{-- <div class="text-gray-500 text-xs">Jurusan {{$data->jurusan}}</div> --}}
+                            </td>
+                            <td class="px-4 py-2">
+                                <div class="font-medium">{{$data->gender}}</div>
                                 {{-- <div class="text-gray-500 text-xs">Jurusan {{$data->jurusan}}</div> --}}
                             </td>
 
@@ -82,7 +142,7 @@
                                     <form action="/guru/delete/{{$data->id}}" method="post">
                                         @csrf
 
-                                        <button type="submit" class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+                                        <button onclick="return confirm('Apakah yakin data ingin dihapus?')" type="submit" class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
                                             Delete Data
                                         </button>
                                     </form>

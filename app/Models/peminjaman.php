@@ -21,7 +21,8 @@ class peminjaman extends Model
         'tgl_kembali',
         'jml_pinjam',
         'status',
-        'entitas_peminjam'
+        'entitas_peminjam',
+        'gender'
     ];
 
     public function siswa(){

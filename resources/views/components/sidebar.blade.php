@@ -2,6 +2,7 @@
 <aside class="w-64 min-h-screen bg-white border-r">
     <!-- Logo & Product -->
     <div class="p-4 flex items-center space-x-2 border-b">
+       
         <a href="/">
 
             <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" class="w-5 h-5" alt="Logo">
