@@ -28,7 +28,6 @@ class AuthController extends Controller
 
             return redirect('/siswa');
         }
-
         return redirect('/login')->with('err', 'Password Anda Tidak Cocok, Coba Lagi!');
     }
 
@@ -45,8 +44,10 @@ class AuthController extends Controller
         $request["user_id"] = $account->id;
         admin::create($request->all());
 
-        // Redirect atau tampilkan pesan sukses
+        // Redirect dan tampilkan pesan sukses
         return redirect('/login')->with('ok', 'Registrasi berhasil, silakan login!');
+        // ok = adalah key 
+        // Registrasi berhasil, silakan login! = value / isinya
     }
 
     public function logout(Request $request){

@@ -10,7 +10,7 @@
 
 <body class="bg-teal-50 font-sans">
 
-  <form method="post" action="/auth/login" class="min-h-screen flex items-center justify-center">
+  <form method="post" action="/auth/register" class="min-h-screen flex items-center justify-center">
     @csrf
     <div class="bg-white rounded-3xl shadow-lg flex max-w-5xl w-full overflow-hidden">
 
