@@ -47,24 +47,26 @@ class SiswaController extends Controller
             'nama_siswa' => $request->nama_siswa,
             'kelas' => $request->kelas,
             'jurusan' => $request->jurusan,
-            'nisn' => $request->nisn
+            'nisn' => $request->nisn,
+            'gender' => $request->gender
         ]);
 
-        return redirect('/siswa');
+        return redirect('/siswa')->with('succes', 'Data berhasil dibuat!');
     }
 
     public function update_siswa(Request $request, $id)
     {
         $siswa = siswa::findOrFail($id);
 
-        siswa::update([
+        $siswa->update([
             'nama_siswa' => $request->nama_siswa,
             'kelas' => $request->kelas,
             'jurusan' => $request->jurusan,
-            'nisn' => $request->nisn
+            'nisn' => $request->nisn,
+             'gender' => $request->gender
         ]);
 
-        return redirect('/siswa');
+        return redirect('/siswa')->with('ok', 'Data siswa telah ter-update!');
     }
 
     public function delete_siswa(Request $request, $id)
@@ -73,6 +75,6 @@ class SiswaController extends Controller
 
         $siswa->delete();
 
-        return redirect('/siswa');
+        return redirect('/siswa')->with('okk', 'Data telah terhapus!');
     }
 }

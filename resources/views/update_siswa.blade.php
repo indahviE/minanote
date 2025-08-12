@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Add Product</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-gray-50 gap-6  flex">
-    @include('components.sidebar')
-
-    <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8">
-
-        <!-- Form Section -->
+    <head>
+        <meta charset="UTF-8">
+        <title>Update - Siswa</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    
+    <body class="bg-gray-50 gap-6  flex">
+        @include('components.sidebar')
+        
+        <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8">
+            
+            <!-- Form Section -->
         <div class="w-full">
             <h2 class="text-xl font-semibold">Formulir Modify Data Siswa</h2>
             <div class=" text-sm mt-2 mb-4 text-gray-600">Masukan Data dengan valid dan benar!</div>
@@ -20,20 +20,25 @@
                 @csrf
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Nama Siswa</label>
-                    <input type="text" name="nama_siswa" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama siswa..">
+                    <input type="text" name="nama_siswa" value="{{$data->nama_siswa}}" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama siswa..">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">NISN Siswa</label>
-                    <input type="text" name="nisn" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa..">
+                    <input type="text" name="nisn" value="{{$data->nisn}}" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa..">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Kelas Siswa</label>
-                    <input type="text" name="kelas" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas..">
+                    <input type="text" name="kelas" value="{{$data->kelas}}" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas..">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Jurusan Siswa</label>
-                    <input type="text" name="jurusan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama jurusan..">
+                    <input type="text" name="jurusan" value="{{$data->jurusan}}" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama jurusan..">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-400">Gender</label>
+                    <input type="text" name="gender" value="{{$data->gender}}" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
                 </div>
 
                 <!-- <div class="grid grid-cols-2 gap-4">
@@ -62,7 +67,6 @@
                     <label class="block text-sm font-medium text-gray-400">Description</label>
                     <textarea class="w-full mt-1 border border-gray-300 rounded px-3 py-2" rows="3" placeholder="Type description here..."></textarea>
                 </div> -->
-
 
                 <div class="pt-2">
                     <button type="submit" class="bg-teal-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-teal-700 transition-all">Submit Modify Data</button>

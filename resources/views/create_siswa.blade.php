@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Add Product</title>
+    <title>Create - Siswa</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -20,20 +20,25 @@
                 @csrf
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Nama Siswa</label>
-                    <input type="text" name="nama_siswa" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama siswa..">
+                    <input type="text" name="nama_siswa" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama siswa.." required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">NISN Siswa</label>
-                    <input type="text" name="nisn" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa..">
+                    <input type="text" name="nisn" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa.." required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Kelas Siswa</label>
-                    <input type="text" name="kelas" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas..">
+                    <input type="text" name="kelas" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas.." required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Jurusan Siswa</label>
-                    <input type="text" name="jurusan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama jurusan..">
+                    <input type="text" name="jurusan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama jurusan.." required>
                 </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-400">Gender Siswa</label>
+                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr.." required>
+                </div>
+                
 
                 <!-- <div class="grid grid-cols-2 gap-4">
                     <div>

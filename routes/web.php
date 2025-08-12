@@ -25,7 +25,7 @@ Route::get('/', function (Request $request) {
     $search = $request->s;
 
     if($request->s){
-        $barang = barang::where('nama_brg', 'LIKE', '%' . $search . '%')->orderByDesc('id')->get();
+        $barang = barang::where('nama_barang', 'LIKE', '%' . $search . '%')->orderByDesc('id')->get();
     }else{
         $barang = barang::orderByDesc('id')->get();
     }
@@ -45,7 +45,7 @@ Route::get('/siswa/update/{id}', [SiswaController::class, 'views_update_siswa'])
 
 Route::post('/siswa/create', [SiswaController::class, 'create_siswa']);
 Route::post('/siswa/update/{id}', [SiswaController::class, 'update_siswa']);
-Route::post('/siswa/update/{id}', [SiswaController::class, 'delete_siswa']);
+Route::post('/siswa/delete/{id}', [SiswaController::class, 'delete_siswa']);
 
 Route::get('/guru', [GuruController::class, 'views_guru']);
 Route::get('/guru/create', [GuruController::class, 'views_create_guru']);
@@ -54,6 +54,14 @@ Route::get('/guru/update/{id}', [GuruController::class, 'views_update_guru']);
 Route::post('/guru/create', [GuruController::class, 'create_guru']);
 Route::post('/guru/update/{id}', [GuruController::class, 'update_guru']);
 Route::post('/guru/delete/{id}', [GuruController::class, 'delete_guru']);
+
+Route::get('/barang', [BarangController::class, 'views_barang']);
+Route::get('/barang/create', [BarangController::class, 'views_create_barang']);
+Route::get('/barang/update/{id}', [BarangController::class, 'views_update_barang']);
+
+Route::post('/barang/create', [BarangController::class, 'create_barang']);
+Route::post('/barang/update/{id}', [BarangController::class, 'update_barang']);
+Route::post('/barang/delete/{id}', [BarangController::class, 'delete_barang']);
 
 Route::get('/barang/detail/{id}', [BarangController::class, 'views_detail']);
 

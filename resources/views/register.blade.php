@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Milanote</title>
+  <title>Register - Minanote</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -18,7 +18,7 @@
       <div class="w-full md:w-1/2 p-10">
         <div class="flex items-center mb-8">
           <div class=" mr-2"> <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" class="w-6 h-6" alt="Logo"></div>
-          <h2 class="text-lg font-semibold text-gray-700">Milanote.</h2>
+          <h2 class="text-lg font-semibold text-gray-700">Minanote.</h2>
         </div>
 
         <h1 class="text-2xl font-bold text-gray-800 mb-2">Holla, Nice to meet you.</h1>

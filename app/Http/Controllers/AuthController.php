@@ -54,4 +54,9 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/login')->with('success', 'Thanks for coming.. see u soon');
     }
+
+    public function store(Request $request)
+    {
+        return redirect()->back()->with('succes', 'login berhasil!');
+    }
 }

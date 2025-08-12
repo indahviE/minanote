@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\guru;
+use App\Models\siswa;
 use Illuminate\Http\Request;
+use Psy\TabCompletion\Matcher\FunctionsMatcher;
+use Illuminate\Support\Facades\Auth;
 
 class GuruController extends Controller
 {
     //
 
-    public function views_guru()
+    public function views_guru(Request $request)
     {
-        $guru = guru::all();
+        
+        if($request->g){
+            $search = $request->g;
+            $guru = guru::where("nama_guru", "LIKE", '%' . $search . '%')->get();
+        }else{
+            $guru = guru::all();
+            $search = "";
+        }
 
-        return view('views_guru', ['guru' => $guru]);
+        return view('views_guru', ['guru' => $guru, 'search_key' => $search]);
     }
 
     public function views_create_guru()
@@ -36,22 +46,24 @@ class GuruController extends Controller
 
         guru::create([
             'nama_guru' => $request->nama_guru,
-            'no_telp' => $request->no_telp
+            'no_telp' => $request->no_telp,
+            'gender' => $request->gender
         ]);
 
-        return redirect('/guru');
+        return redirect('/guru')->with('succes', 'Data berhasil dibuat!');
     }
 
     public function update_guru(Request $request, $id)
     {
         $guru = guru::findOrFail($id);
 
-        guru::update([
-            'nama_guru' => $request->nama_guru,
-            'no_telp' => $request->no_telp
+        $guru->update([
+           'nama_guru' => $request->nama_guru,
+            'no_telp' => $request->no_telp,
+            'gender' => $request->gender
         ]);
 
-        return redirect('/guru');
+        return redirect('/guru')->with('ok', 'Data berhasil ter-update!');
     }
 
     public function delete_guru(Request $request, $id)
@@ -60,7 +72,6 @@ class GuruController extends Controller
 
         $guru->delete();
 
-        return redirect('/guru');
+        return redirect('/guru')->with('okk', 'Data berhasil dihapus!');
     }
-
 }

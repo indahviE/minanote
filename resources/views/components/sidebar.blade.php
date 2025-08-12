@@ -2,6 +2,7 @@
 <aside class="w-64 min-h-screen bg-white border-r">
     <!-- Logo & Product -->
     <div class="p-4 flex items-center space-x-2 border-b">
+       
         <a href="/">
 
             <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" class="w-5 h-5" alt="Logo">
@@ -39,7 +40,7 @@
             </li>
 
             <!-- Admin -->
-            <li>
+            {{-- <li>
                 <a href="/admin" class="flex items-center px-4 py-2 hover:bg-gray-100 text-gray-700">
                     <svg class="w-5 h-5 mr-3 text-red-400" fill="none" stroke="currentColor" stroke-width="2"
                         viewBox="0 0 24 24">
@@ -47,7 +48,7 @@
                     </svg>
                     Admin
                 </a>
-            </li>
+            </li> --}}
 
             <!-- Barang -->
             <li>

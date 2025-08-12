@@ -6,9 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Minanote</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display:none;
+    }
+    .scrollbar-hide{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </head>
 
-<body class="font-sans antialiased text-gray-700">
+<body class="font-sans antialiased text-gray-700 overflow-x-hidden">
 
 
   <!-- Navbar -->
@@ -20,7 +29,7 @@ bg-white">
     <nav class="space-x-6 hidden md:flex">
       <a href="#home" class="text-gray-700 hover:text-blue-600">Beranda</a>
       <a href="#kenapa-kami" class="text-gray-700 hover:text-blue-600">Kenapa Kami?</a>
-      <a href="#barang-kami" class="text-gray-700 hover:text-blue-600">Barang Kami</a>
+      <a href="/views_barang" class="text-gray-700 hover:text-blue-600">Barang Kami</a>
 
     </nav>
     <div class="flex items-center space-x-4">
@@ -65,39 +74,16 @@ bg-white">
     <!-- Hero Section -->
     <section id="home" class="grid grid-cols-1 md:grid-cols-2 gap-6 px-16 py-12 items-center">
       <div>
-        <h1 class="text-4xl font-bold leading-snug">Let's Create a Brilliant Future with Our School</h1>
-        <p class="mt-4 text-gray-600">UP School is a technology high school that is committed to providing high quality education and implementing IT-based curriculum.</p>
+        <h1 class="text-4xl font-bold leading-snug">Minanote - The Smart, Fast, and Easy Way to Borrow School Items.</h1>
+        <p class="mt-4 text-gray-600">Want to Borrow Something? Let's Join Minanote!</p>
         <div class="mt-6 flex space-x-4">
-          <button class="bg-blue-600 text-white px-6 py-3 rounded-full">Join with us</button>
+          <a href="/register"><button class="bg-blue-600 text-white px-6 py-3 rounded-full">Join with us</button></a>
           <button class="text-blue-600 underline">Get to know more</button>
-        </div>
-        <div class="mt-8 flex space-x-10 text-center">
-          <div>
-            <div class="text-xl font-bold">60+</div>
-            <div class="text-sm text-gray-600">Teachers</div>
-          </div>
-          <div>
-            <div class="text-xl font-bold">2,5k</div>
-            <div class="text-sm text-gray-600">Students</div>
-          </div>
-          <div>
-            <div class="text-xl font-bold">A+</div>
-            <div class="text-sm text-gray-600">Accreditation</div>
-          </div>
         </div>
       </div>
       <div>
         <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998" alt="Students" class="rounded-xl shadow-lg" />
-      </div>
-    </section>
-
-    <!-- Partner Logos -->
-    <section class="bg-blue-600 py-6 px-16">
-      <div class="flex justify-around flex-wrap gap-6 text-white text-lg font-semibold">
-        <span>ORACLE</span>
-        <span>python</span>
-        <span>cisco</span>
-        <span>Microsoft</span>
+        {{-- <img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?fm=jpg&amp;q=60&amp;w=3000&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Students" class="rounded-xl shadow-lg" /> --}}
       </div>
     </section>
 
@@ -105,21 +91,21 @@ bg-white">
     <section class="px-16 py-16" id="kenapa-kami">
       <div class="flex flex-col md:flex-row justify-between items-start gap-10">
         <div class="md:w-1/3">
-          <h2 class="text-2xl font-bold mb-4">Choose a Quality School for a Bright Future</h2>
-          <p class="text-gray-600">UP School is a technology high school that is committed to providing high quality education and implementing IT-based curriculum.</p>
+          <h2 class="text-2xl font-bold mb-4">Only the best - Borrow high - Quality items with Minanote</h2>
+          <p class="text-gray-600">Minanote hadir untuk memudahkan peminjaman barang di lingkungan sekolah. Dengan sistem yang efisien dan barang berkualitas, pengalaman meiminjam jadi lebih cepat, mudah dan tanpa ribet!</p>
         </div>
         <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="p-6 border rounded-lg shadow-sm hover:shadow-md transition">
-            <div class="text-lg font-bold mb-2">Students will be <span class="text-blue-600">guided</span></div>
-            <p class="text-sm text-gray-600">The students can become graduates who are competent in the field of IT.</p>
+            <div class="text-lg font-bold mb-2">Efficient Borrowing<span class="text-blue-600"><p>Process</span></div>
+            <p class="text-sm text-gray-600">Students and Teachers can borrow items quickly with a just a few clicks. No hassle, no paperwork. </p>
           </div>
           <div class="p-6 border rounded-lg shadow-sm hover:shadow-md transition">
-            <div class="text-lg font-bold mb-2">Students are <span class="text-blue-600">mentally</span> equipped</div>
-            <p class="text-sm text-gray-600">The students can become graduates who are competent in the field of IT.</p>
+            <div class="text-lg font-bold mb-2">High Quality<span class="text-blue-600"> - Items</span></div>
+            <p class="text-sm text-gray-600">All items in Minanote are regularly checked and maintained to ensure excellent condition. </p>
           </div>
           <div class="p-6 border rounded-lg shadow-sm hover:shadow-md transition">
-            <div class="text-lg font-bold mb-2"><span class="text-blue-600">Beneficial</span> for many people</div>
-            <p class="text-sm text-gray-600">The students can become graduates who are competent in the field of IT.</p>
+            <div class="text-lg font-bold mb-2"><span class="text-blue-600">Empowering</span> School Comunity</div>
+            <p class="text-sm text-gray-600">Minanote helps schools manage inventory efficiently, supporting learning and teaching activities.</p>
           </div>
         </div>
       </div>
@@ -131,16 +117,16 @@ bg-white">
       <h2 class="text-2xl font-semibold mb-10">Barang Yang Kami Sediakan, hanya untuk anda!</h2>
 
       <!-- Product Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class=" gap-6 flex overflow-x-auto p-4 max-w-full scrollbar-hide">
+        <div class=" gap-6 flex items-start max-w-[2400px]">
         <!-- Product Card -->
-
         @foreach($barang as $data)
-        <div class="relative bg-white rounded-xl shadow-md overflow-hidden flex flex-col p-4 hover:shadow-2xl transition">
+        <div class="relative bg-white w-[2000px] h-[500px] rounded-xl shadow-md overflow-x-auto flex flex-col p-4 hover:shadow-2xl transition">
           <img src="{{$data->foto}}" alt="Product" class="w-full h-36 object-contain mb-3">
           <h3 class="text-sm font-semibold">{{$data->nama_brg}}</h3>
-          <p class="text-xs text-gray-500 mb-1">{{$data->deskripsi}}</p>
+          <p class="text-xs text-gray-500 mb-1 h-48">{{$data->deskripsi}}</p>
           <p class="text-green-600 text-xs mb-1">⭐⭐⭐⭐⭐ (stock {{$data->stock}})</p>
-          <p class="font-semibold text-sm mb-2">Kelayakan Barang : {{$data->kelayakan}}</p>
+          <p class="font-semibold text-sm mb-2 h-7">Kelayakan Barang : {{$data->kelayakan}}</p>
           @if($data->stock <= 0)
             <button class="absolute bg-blue-300 text-white text-xs px-3 py-2 rounded-full" disabled>Stok Sedang Kosong</button>
             @else
@@ -152,6 +138,7 @@ bg-white">
         @endforeach
 
         <!-- Tambahkan produk lainnya sesuai kebutuhan -->
+      </div>
       </div>
     </section>
 
