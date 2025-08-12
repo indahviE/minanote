@@ -14,7 +14,7 @@
 
         @include('components.sidebar')
 
-        <div class="w-full p-12 bg-white">
+        <div class="w-full p-12 bg-white ms-64">
             <div class="flex justify-between items-center mb-3">
                 <h1 class="text-2xl font-bold">Data History Peminjaman</h1>
                 <!-- <div class="space-x-2">

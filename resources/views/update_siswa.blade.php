@@ -10,7 +10,7 @@
     <body class="bg-gray-50 gap-6  flex">
         @include('components.sidebar')
         
-        <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8">
+        <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8 ms-72">
             
             <!-- Form Section -->
         <div class="w-full">
