@@ -116,7 +116,7 @@
 
                                     @if ($data->gender == "pr")
                                     <img src="https://img.freepik.com/premium-vector/indonesian-senior-high-school-student-cute-girl-character-kawaii-chibi_380474-601.jpg" alt="Logo" class="w-6 h-6 rounded-full">
-                                        
+
                                     @endif
                                     <div>
                                         <div class="font-medium">{{$data->nama_guru}}</div>

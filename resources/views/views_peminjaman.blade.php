@@ -103,7 +103,7 @@
                             </div>
                         </div>
                     @endif
-                    
+
                     <tbody class="divide-y">
                         @foreach ($peminjaman as $data)
                             <tr class="hover:bg-gray-50">
