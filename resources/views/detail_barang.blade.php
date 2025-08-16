@@ -123,5 +123,3 @@ bg-white">
     @include('footer')
 
 </body>
-
-</html>

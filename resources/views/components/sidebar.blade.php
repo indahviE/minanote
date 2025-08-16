@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<aside class="w-64 min-h-screen bg-white border-r">
+<aside class="w-64 min-h-screen bg-white border-r fixed">
     <!-- Logo & Product -->
     <div class="p-4 flex items-center space-x-2 border-b">
        
