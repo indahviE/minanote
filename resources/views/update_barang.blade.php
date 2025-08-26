@@ -70,6 +70,8 @@
 
                 <div class="pt-2">
                     <button type="submit" class="bg-teal-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-teal-700 transition-all">Submit Modify Data</button>
+                    <a href="/barang" class="bg-gray-300 text-sm text-gray-800 px-6 py-2 font-semibold rounded hover:bg-gray-400 transition-all">Cancel</a>
+
                 </div>
 
             </form>
