@@ -25,7 +25,7 @@
             <div class="flex items-end gap-2  mb-4 ">
                 <form class="flex items-center w-5/12" method="get">
                     <input type="text" name="s" value="{{ $search_key }}"
-                        placeholder="Cari berdasarkan nama siswa.."
+                        placeholder="Cari berdasarkan nama siswa . ."
                         class="w-full px-4 py-2 border text-gray-600 rounded-md">
                 </form>
 
@@ -48,7 +48,7 @@
                 <table class="min-w-full text-sm text-left">
                     <thead class="bg-gray-100 text-gray-700">
                         <tr>
-                            <th class="px-4 py-2 font-medium">#</th>
+                            <th class="px-4 py-2 font-medium">No</th>
                             <th class="px-4 py-2 font-medium">Nama/NISN</th>
                             <th class="px-4 py-2 font-medium">Kelas</th>
                             <th class="px-4 py-2 font-medium">Gender</th>
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                     @endif
-                    
+
                     <tbody class="divide-y">
                         @foreach ($siswa as $data)
                             <tr class="hover:bg-gray-50">

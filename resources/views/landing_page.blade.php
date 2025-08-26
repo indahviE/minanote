@@ -54,7 +54,7 @@ bg-white">
 
   <!-- Sticky Search Bar -->
   <form method="get" class="fixed bottom-10 shadow-2xl flex items-center end-10 z-[30] w-[300px] hover:w-[780px] transition-all bg-teal-600 rounded-full p-2">
-    <p class="text-xs p-2.5 text-white max-w-[250px]">Mulai Cari Barang Yang anda perlukan berdasarkan keyword nama barang.</p>  
+    <p class="text-xs p-2.5 text-white max-w-[250px]">Mulai Cari Barang Yang anda perlukan berdasarkan keyword nama barang.</p>
   <div class="flex items-center bg-white rounded-full shadow-lg p-2 w-full">
       <input
         name="s"
@@ -121,10 +121,10 @@ bg-white">
         <div class=" gap-6 flex items-start max-w-[2400px]">
         <!-- Product Card -->
         @foreach($barang as $data)
-        <div class="relative bg-white w-[270px] max-h-[400px] rounded-xl shadow-md overflow-x-auto flex flex-col p-4 hover:shadow-2xl transition">
+        <div class="relative bg-white w-[270px] max-h-[400px] rounded-xl shadow-md overflow-hidden flex flex-col p-4 hover:shadow-2xl transition">
           <img src="{{$data->foto}}" alt="Product" class="w-full h-36 object-contain mb-3">
           <h3 class="text-sm font-semibold">{{$data->nama_brg}}</h3>
-          <p class="text-xs text-gray-500 mb-1 max-h-48">{{$data->deskripsi}}</p>
+          <p class="text-xs text-gray-500 mb-2 max-h-16 overflow-hidden">{{$data->deskripsi}}</p>
           <p class="text-green-600 text-xs mb-1">⭐⭐⭐⭐⭐ (stock {{$data->stock}})</p>
           <p class="font-semibold text-sm mb-2 h-7">Kelayakan Barang : {{$data->kelayakan}}</p>
           @if($data->stock <= 0)

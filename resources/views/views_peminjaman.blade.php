@@ -43,7 +43,7 @@
                 <table class="min-w-full text-sm text-left">
                     <thead class="bg-gray-100 text-gray-700">
                         <tr>
-                            <th class="px-4 py-2 font-medium">#</th>
+                            <th class="px-4 py-2 font-medium">No</th>
                             <th class="px-4 py-2 font-medium">Nama/Entitas Yang Meminjam</th>
                             <th class="px-4 py-2 font-medium">Barang Yang Dipinjam/Jumlah</th>
 
@@ -165,7 +165,7 @@
 
                                 <td class="px-4 py-2">
                                     <div class="flex gap-1 flex-col">
-                                        <form action="/peminjaman/done/{{ $data->id }}" method="post">
+                                        <form action="/peminjaman/done{{ $data->id }}" method="post">
                                             @csrf
                                             <button
                                                 onclick="return confirm('Apakah barang benar sudah dikembalikan? (jika iya maka peminjaman ini akan dianggap selesai)')"

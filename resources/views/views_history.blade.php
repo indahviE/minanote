@@ -90,11 +90,11 @@
 
                             <td class="px-4 py-2">
                                 <div class="flex gap-1 flex-col">
-                                   
-                                    <form action="/peminjaman/delete/{{$data->id}}" method="post">
+
+                                    <form action="/history/delete/{{$data->id}}" method="post">
                                         @csrf
 
-                                        <button type="submit" class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+                                        <button onclick="return confirm('Apakah yakin data ingin dihapus?')" type="submit" class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
                                             Delete Data
                                         </button>
                                     </form>

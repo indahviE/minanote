@@ -79,7 +79,7 @@ bg-white">
                 </div>
                 @endforeach
 
-                
+
             </div>
         </div>
 

@@ -33,7 +33,6 @@ class PeminjamanController extends Controller
         $peminjaman = peminjaman::findOrFail($id);
         return view('update_peminjaman', ['data' => $peminjaman]);
     }
-
     //post
     public function create_peminjaman(Request $request)
     {

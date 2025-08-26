@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,14 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-teal-50 font-sans"> 
+<body class="bg-teal-50 font-sans">
 
     <form method="post" action="/auth/login" class="min-h-screen flex items-center justify-center">
         <div>
             @csrf
-            <div class="bg-white rounded-3xl shadow-lg flex max-w-5xl w-full overflow-hidden">
+           <div class="bg-white rounded-3xl shadow-lg flex max-w-5xl w-full overflow-hidden">
 
-                <!-- Left Side (Form) --> 
+                <!-- Left Side (Form) -->
                 <div class="w-full md:w-1/2 p-10">
                     <div class="flex items-center mb-8">
                         <div class=" mr-2"> <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
@@ -66,11 +66,9 @@
 
                 <!-- Right Side (Image) -->
                 <div
-                    class="hidden md:block w-1/2 bg-gradient-to-tr from-teal-500/70 to-pink-500/70 py-4 relative h-screen">
-                    <img src="https://indeedinspiring.com/s/login_sample.webp" alt="Illustration"
+                    class="hidden md:block w-1/2 bg-gradient-to-tr from-teal-500/70 to-pink-500/70 relative h-screen">
+                    <img src="https://images.unsplash.com/photo-1559056961-1f4dbbf9d36a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGxvZ2lufGVufDB8fDB8fHww"
                         class="w-full h-full object-fit " />
-                    {{-- <img src="{{ asset('background.jpg') }}" alt="Illustration" class="w-full h-full object-fit" /> --}}
-                </div>
             </div>
         </div>
 

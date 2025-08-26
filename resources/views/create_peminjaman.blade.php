@@ -108,7 +108,7 @@
                 </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-400">Gender</label>
-                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
+                    <select type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400 ">Nama Guru Yang Meminjam</label>

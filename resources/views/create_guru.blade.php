@@ -24,7 +24,7 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">No Telp</label>
-                    <input type="text" name="no_telp" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa.." required>
+                    <input type="text" name="no_telp" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan no telp.." required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Gender</label>
