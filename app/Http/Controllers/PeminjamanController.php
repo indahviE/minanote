@@ -118,6 +118,6 @@ class PeminjamanController extends Controller
             'stock' => $barang->stock + $peminjaman->jml_pinjam
         ]);
 
-        return redirect('/peminjaman');
+        return redirect('/history');
     }
 }

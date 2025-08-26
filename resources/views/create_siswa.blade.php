@@ -38,7 +38,7 @@
                     <label class="block text-sm font-medium text-gray-400">Gender Siswa</label>
                     <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr.." required>
                 </div>
-                
+
 
                 <!-- <div class="grid grid-cols-2 gap-4">
                     <div>
@@ -70,6 +70,8 @@
 
                 <div class="pt-2">
                     <button type="submit" class="bg-blue-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-blue-700 transition-all">Submit Data</button>
+
+                    <a href="/siswa" class="text-sm text-gray-500 px-6 py-2 font-bold transition-all">Kembali</a>
                 </div>
 
             </form>

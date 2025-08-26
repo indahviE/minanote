@@ -20,11 +20,7 @@
                 @csrf
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Entitas Yang Meminjam</label>
-                    <input type="text" readonly value="Siswa" name="entitas_peminjam" class="w-full text-gray-600 mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama peminjaman..">
-                </div>
-                  <div>
-                    <label class="block text-sm font-medium text-gray-400">Gender</label>
-                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
+                    <input type="text" readonly value="Siswa" name="entitas_peminjam" class="w-full text-gray-600 mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder=" ">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400 ">Nama Siswa Yang Meminjam</label>
@@ -33,6 +29,10 @@
                         <option value="{{$data->id}}">{{$data->nama_siswa}}</option>
                         @endforeach
                     </select>
+                </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-400">Gender</label>
+                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
                 </div>
                 <div class="flex gap-3">
 
@@ -89,6 +89,8 @@
 
                 <div class="pt-2">
                     <button type="submit" class="bg-blue-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-blue-700 transition-all">Submit Data</button>
+
+                    <a href="/peminjaman" class="text-sm text-gray-500 px-6 py-2 font-bold transition-all">Kembali</a>
                 </div>
 
             </form>
@@ -104,11 +106,7 @@
                 @csrf
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Entitas Yang Meminjam</label>
-                    <input type="text" readonly value="Guru" name="entitas_peminjam" class="w-full text-gray-600 mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama peminjaman..">
-                </div>
-                  <div>
-                    <label class="block text-sm font-medium text-gray-400">Gender</label>
-                    <select type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
+                    <input type="text" readonly value="Guru" name="entitas_peminjam" class="w-full text-gray-600 mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder=" ">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400 ">Nama Guru Yang Meminjam</label>
@@ -117,6 +115,10 @@
                         <option value="{{$data->id}}">{{$data->nama_guru}}</option>
                         @endforeach
                     </select>
+                </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-400">Gender</label>
+                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
                 </div>
                 <div class="flex gap-3">
 
@@ -174,6 +176,8 @@
 
                 <div class="pt-2">
                     <button type="submit" class="bg-blue-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-blue-700 transition-all">Submit Data</button>
+
+                    <a href="/peminjaman" class="text-sm text-gray-500 px-6 py-2 font-bold transition-all">Kembali</a>
                 </div>
 
             </form>

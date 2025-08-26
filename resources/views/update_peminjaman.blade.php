@@ -6,12 +6,12 @@
         <title>Update - Peminjaman</title>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    
+
     <body class="bg-gray-50 gap-6  flex ">
         @include('components.sidebar')
-        
+
         <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8 ms-72">
-            
+
             <!-- Form Section -->
         <div class="w-full">
             <h2 class="text-xl font-semibold">Formulir Modify Data Peminjaman</h2>
@@ -86,8 +86,10 @@
                     <textarea class="w-full mt-1 border border-gray-300 rounded px-3 py-2" rows="3" placeholder="Type description here..."></textarea>
                 </div> -->
 
-                <div class="pt-2">
+                <div class="pt-2">     
                     <button type="submit" class="bg-teal-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-teal-700 transition-all">Submit Modify Data</button>
+
+                    <a href="/peminjaman" class="text-sm text-gray-500 px-6 py-2 font-bold transition-all">Kembali</a>
                 </div>
 
             </form>

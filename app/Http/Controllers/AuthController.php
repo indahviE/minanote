@@ -19,7 +19,7 @@ class AuthController extends Controller
     public function login(Request $request){ // form handle login
         // dd($request->all()); //ngecek isi data
         $admin = User::where('email', $request->email)->first(); // ambil satu daata admin yang cocok
-        if(!$admin) return redirect('/login')->with('err', 'Akun Email Anda Tidak Ditemukan!'); // fungsi untuk mengarahkan ke halaman tertentu 
+        if(!$admin) return redirect('/login')->with('err', 'Akun Email Anda Tidak Ditemukan!'); // fungsi untuk mengarahkan ke halaman tertentu
 
         // kalo ada, cek password
         if(Hash::check($request->password, $admin->password)){
@@ -32,7 +32,7 @@ class AuthController extends Controller
     }
 
     public function register_view(){
-        return view('register'); 
+        return view('register');
     }
 
     public function register(Request $request){
@@ -46,7 +46,7 @@ class AuthController extends Controller
 
         // Redirect dan tampilkan pesan sukses
         return redirect('/login')->with('ok', 'Registrasi berhasil, silakan login!');
-        // ok = adalah key 
+        // ok = adalah key
         // Registrasi berhasil, silakan login! = value / isinya
     }
 
