@@ -107,7 +107,7 @@ class PeminjamanController extends Controller
     public function peminjaman_selesai(Request $request, $id)
     {
         $peminjaman = peminjaman::findOrFail($id);
-        $barang = barang::findOrFail($id);
+        $barang = barang::findOrFail($peminjaman->barang_id);
 
         $peminjaman->update([
             'status' => "Selesai"
@@ -120,4 +120,5 @@ class PeminjamanController extends Controller
 
         return redirect('/history');
     }
+
 }

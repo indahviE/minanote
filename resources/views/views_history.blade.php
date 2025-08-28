@@ -39,8 +39,8 @@
                             <th class="px-4 py-2 font-medium">Barang Yang Dipinjam/Jumlah</th>
 
                             <th class="px-4 py-2 font-medium">Tanggal Pinjam/Kembali</th>
-                            <th class="px-4 py-2 font-medium">Status</th>
-                            <th class="px-4 py-2 font-medium">Aksi</th>
+                            <th class="px-4 text-center py-2 font-medium">Status</th>
+                            {{-- <th class="px-4 py-2 font-medium">Aksi</th> --}}
 
                         </tr>
                     </thead>
@@ -82,13 +82,13 @@
                                 <div class="text-gray-500 text-xs">Akan Dikembalikan Pada : {{$data->tgl_kembali}}</div>
                             </td>
 
-                            <td>
-                                <div class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+                            <td class="px-4 py-2">
+                                <div class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white text-center transition-all shadow-sm">
                                     Selesai
                                 </div>
                             </td>
 
-                            <td class="px-4 py-2">
+                            {{-- <td class="px-4 py-2">
                                 <div class="flex gap-1 flex-col">
 
                                     <form action="/history/delete/{{$data->id}}" method="post">
@@ -100,7 +100,7 @@
                                     </form>
 
                                 </div>
-                            </td>
+                            </td> --}}
 
                         </tr>
                         @endforeach

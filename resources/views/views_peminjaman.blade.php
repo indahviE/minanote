@@ -172,7 +172,7 @@
                                                 type="submit"
                                                 class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
                                                 Barang
-                                                <p>dikembalikan
+                                                <p>dikembalikan</p>
                                             </button>
                                         </form>
 
