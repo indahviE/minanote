@@ -182,13 +182,8 @@
 
                 <div class="pt-2">
                     <button type="submit" class="bg-blue-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-blue-700 transition-all">Submit Data</button>
-<<<<<<< HEAD
-
-                    <a href="/peminjaman" class="text-sm text-gray-500 px-6 py-2 font-bold transition-all">Kembali</a>
-=======
                     <a href="/peminjaman" class="bg-gray-300 text-sm text-gray-800 px-6 py-2 font-semibold rounded hover:bg-gray-400 transition-all">Cancel</a>
 
->>>>>>> 85d6ea93b36c5ef307994166e6993ea838e6f906
                 </div>
 
             </form>

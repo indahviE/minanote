@@ -24,10 +24,14 @@ class PeminjamanController extends Controller
         foreach ($peminjaman as $data){
             if ($data->entitas_peminjam == "Siswa")
             {
-                $total_barang_dipinjam_siswa += $data->jml_pinjam;
+                $total_barang_dipinjam_siswa += $data->jml_pinjam; // mengambil berapa banyak barang dalam sekali peminjaman
+            }else{
+                $total_barang_dipinjam_guru += $data->jml_pinjam;
             }
+            
+            $total_barang_dipinjam += $data->jml_pinjam;
         }
-        return view('views_peminjaman', ['peminjaman' => $peminjaman, "total_barang_dipinjam_siswa"=>$total_barang_dipinjam_siswa]);
+        return view('views_peminjaman', ['peminjaman' => $peminjaman, "total_barang_dipinjam_siswa"=>$total_barang_dipinjam_siswa, 'total_barang_dipinjam_guru' => $total_barang_dipinjam_guru, "total_barang_dipinjam" => $total_barang_dipinjam]);
     }
 
     public function views_create_peminjaman()

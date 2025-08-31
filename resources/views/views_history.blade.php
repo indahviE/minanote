@@ -15,8 +15,9 @@
         @include('components.sidebar')
 
         <div class="w-full p-12 bg-white ms-64">
-            <div class="flex justify-between items-center mb-3">
+            <div class=" justify-between items-center mb-3">
                 <h1 class="text-2xl font-bold">Data History Peminjaman</h1>
+                 <h1 class="text-md text-amber-400 font-bold">Halo Admin, {{Auth::user()->name}}!</h1>
                 <!-- <div class="space-x-2">
                 <button class="px-4 py-2 bg-gray-200 text-sm rounded hover:bg-gray-300">Download CSV</button>
                 <button class="px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800">Invite Organization</button>

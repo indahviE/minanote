@@ -22,10 +22,19 @@ class BarangController extends Controller
             $search = "";
         }
 
-        return view('views_barang', ['barang' => $barang, 'search_key' => $search]);
+        $total_barang = 0;
+        $total_stock_seluruh_barang = 0;
+
+        foreach ($barang as $data) {
+            $total_barang++;
+            $total_stock_seluruh_barang += $data->stock;
+        }
+
+        return view('views_barang', ['barang' => $barang, 'search_key' => $search, 'total_barang' => $total_barang, 'total_stock_seluruh_barang' => $total_stock_seluruh_barang]);
     }
 
-    public function views_detail(Request $request, $id){
+    public function views_detail(Request $request, $id)
+    {
         $barang = barang::findOrFail($id);
         $orang_yang_meminjam_barang_ini = peminjaman::with(['siswa', 'guru', 'barang'])->where("barang_id", $id)->where('status', 'Dipinjam')->get();
 
@@ -51,7 +60,7 @@ class BarangController extends Controller
         $barang = barang::all();
 
         //handle foto
-        if($request->hasFile('file_foto')){
+        if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto');
             $path = $file->store('public/store'); // menampung lokasi file disimpan dalam projek : public/store/...
             $file_url = Storage::url($path); // untuk mendapatkan filesupaya bisa tampil di web
@@ -71,7 +80,7 @@ class BarangController extends Controller
         $barang = barang::findOrFail($id);
 
         //handle foto
-       if($request->hasFile('file_foto')){
+        if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto'); // simpan file dalam variabel
             $path = $file->store('public/store'); // menampung lokasi file disimpan dalam projek : public/store/...
             $file_url = Storage::url($path); // untuk mendapatkan filesupaya bisa tampil di web : http://...

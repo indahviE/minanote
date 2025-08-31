@@ -36,11 +36,11 @@ bg-white">
       <button class="text-sm text-gray-700">Ind</button>
 
       @if(Auth::user())
+      <a href="/siswa" class="text-sm text-blue-600 font-semibold">Pergi Ke Dashboard</a>
       <form action="/auth/logout" method="post">
         @csrf
         <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-full text-sm">Log out</button>
       </form>
-      <a href="/siswa" class="text-sm text-blue-600 font-semibold">Pergi Ke Dashboard</a>
       @else
       <a href="/login">
         <button class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm">Login</button>

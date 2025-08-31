@@ -22,7 +22,22 @@ class SiswaController extends Controller
             $search = "";
         }
 
-        return view('views_siswa', ['siswa' => $siswa, 'search_key' => $search]);
+        $total_siswa_laki2 = 0;
+        $total_siswa_perempuan = 0;
+        $total_siswa = 0;
+
+        foreach ($siswa as $data) {
+
+            if ($data->gender == "lk") {
+                $total_siswa_laki2++;
+            } else {
+                $total_siswa_perempuan++;
+            }
+
+            $total_siswa++;
+        }
+
+        return view('views_siswa', ['siswa' => $siswa, 'search_key' => $search, 'total_siswa_laki2' => $total_siswa_laki2, 'total_siswa_perempuan' => $total_siswa_perempuan, 'total_siswa' => $total_siswa]);
     }
 
     public function views_create_siswa()

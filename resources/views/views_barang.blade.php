@@ -15,12 +15,53 @@
         @include('components.sidebar')
 
         <div class="w-full p-12 bg-white ms-64">
-            <div class="flex justify-between items-center mb-6">
-                <h1 class="text-2xl font-bold">Data Barang</h1>
+            <div class=" justify-between items-center mb-3">
+                <h1 class="text-3xl font-bold">Data Barang</h1>
+                 <h1 class="text-md text-amber-400 font-bold">Halo Admin, {{Auth::user()->name}}!</h1>
                 <!-- <div class="space-x-2">
                 <button class="px-4 py-2 bg-gray-200 text-sm rounded hover:bg-gray-300">Download CSV</button>
                 <button class="px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800">Invite Organization</button>
             </div> -->
+            </div>
+
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-5">
+
+                <!-- Card Siswa -->
+                <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-gray-500 text-sm font-medium">Total Barang</h2>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_barang}}</p>
+                        </div>
+                        <div class="p-4 bg-blue-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5.121 17.804A9 9 0 1117.805 5.12 9 9 0 015.121 17.804z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Guru -->
+                <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-gray-500 text-sm font-medium">Total Stock Seluruh Barang</h2>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_stock_seluruh_barang}}</p>
+                        </div>
+                        <div class="p-4 bg-green-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 7l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+               
+
             </div>
             <div class="flex items-end gap-2  mb-4 ">
                 <form class="flex items-center w-5/12" method="get">
