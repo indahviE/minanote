@@ -32,7 +32,10 @@
                 </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-400">Gender</label>
-                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
+                    <select name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                        <option value="lk">laki-laki</option>
+                        <option value="pr">perempuan</option>
+                    </select>
                 </div>
                 <div class="flex gap-3">
 
@@ -118,7 +121,10 @@
                 </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-400">Gender</label>
-                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
+                     <select name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                        <option value="lk">laki-laki</option>
+                        <option value="pr">perempuan</option>
+                    </select>
                 </div>
                 <div class="flex gap-3">
 

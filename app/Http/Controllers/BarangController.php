@@ -52,18 +52,18 @@ class BarangController extends Controller
 
         //handle foto
         if($request->hasFile('file_foto')){
-            $file = $request->file('file_foto'); 
+            $file = $request->file('file_foto');
             $path = $file->store('public/store'); // menampung lokasi file disimpan dalam projek : public/store/...
-            $file_url = Storage::url($path); // untuk mendapatkan filesupaya bisa tampil di web 
+            $file_url = Storage::url($path); // untuk mendapatkan filesupaya bisa tampil di web
 
             $request['foto'] = $file_url;
         }
 
-        $request['like'] = 0; // set default like dari 0
+        // $request['like'] = 0; // set default like dari 0
 
         // dd($request->all());
-        barang::create($request->all()); 
-        return redirect('/barang')->with('succes', 'Data telah terbuat!');
+        barang::create($request->all());
+        return redirect('/barang')->with('succes', 'Barang berhasil ter-catat!');
     }
 
     public function update_barang(Request $request, $id)
@@ -80,7 +80,7 @@ class BarangController extends Controller
         }
 
         $barang->update($request->all());
-        return redirect('/barang')->with('ok', 'Data telah ter-update');
+        return redirect('/barang')->with('ok', 'Barang berhasil ter-update!');
     }
 
     public function delete_barang(Request $request, $id)
@@ -89,6 +89,6 @@ class BarangController extends Controller
 
         $barang->delete();
 
-        return redirect('/barang')->with('okk', 'Data telah terhapus!');
+        return redirect('/barang')->with('okk', 'Barang berhasil ter-hapus!');
     }
 }

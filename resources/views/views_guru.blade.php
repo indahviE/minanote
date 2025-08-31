@@ -24,21 +24,22 @@
             </div>
             <div class="flex items-end gap-2  mb-4 ">
                 <form class="flex items-center w-5/12" method="get">
-                    <input type="text" name="g" value="{{$search_key}}" placeholder="Cari berdasarkan nama guru . ." class="w-full px-4 py-2 border text-gray-600 rounded-md">
+                    <input type="text" name="g" value="{{ $search_key }}"
+                        placeholder="Cari berdasarkan nama guru . ."
+                        class="w-full px-4 py-2 border text-gray-600 rounded-md">
                 </form>
 
                 <a href="/guru/create"
                     class="inline-flex text-sm items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 4v16m8-8H4" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                     </svg>
                     Tambah Data
                 </a>
 
                 <div class="text-gray-400 text-sm mb-2 ms-auto">
-                    Menampilkan {{count($guru)}} dari total {{count($guru)}} data
+                    Menampilkan {{ count($guru) }} dari total {{ count($guru) }} data
                 </div>
 
             </div>
@@ -60,97 +61,99 @@
                     @if (Session::has('succes'))
                         <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
                             role="alert">
-                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
+                                <g fill="none" stroke="#166534" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5">
+                                    <polyline points="7.25 14.25 2.75 14.25 2.75 1.75 13.25 1.75 13.25 9.25" />
+                                    <path d="m9.75 12.75 1.5 1.5 3-2.5m-8.5-4h4.5m-4.5 3h1.5m-1.5-6h4.5" />
+                                </g>
                             </svg>
-                            <span class="sr-only">Info</span>
                             <div>
-                                <span class="font-medium">{{ Session::get('succes') }}</span>
+                                <span class="font-medium ml-1">{{ Session::get('succes') }}</span>
                             </div>
                         </div>
                     @endif
 
                     {{-- alert for update --}}
                     @if (Session::has('ok'))
-                        <div class="flex items-center p-4 mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800"
+                        <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
                             role="alert">
-                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20">
+                                <path fill="#166534"
+                                    d="M5.7 9c.4-2 2.2-3.5 4.3-3.5c1.5 0 2.7.7 3.5 1.8l1.7-2C14 3.9 12.1 3 10 3C6.5 3 3.6 5.6 3.1 9H1l3.5 4L8 9zm9.8-2L12 11h2.3c-.5 2-2.2 3.5-4.3 3.5c-1.5 0-2.7-.7-3.5-1.8l-1.7 1.9C6 16.1 7.9 17 10 17c3.5 0 6.4-2.6 6.9-6H19z" />
                             </svg>
-                            <span class="sr-only">Info</span>
+
                             <div>
-                                <span class="font-medium">{{ Session::get('ok') }}</span>
+                                <span class="font-medium ml-1">{{ Session::get('ok') }}</span>
                             </div>
                         </div>
                     @endif
 
                     {{-- alert for delete --}}
                     @if (Session::has('okk'))
-                        <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                        <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
                             role="alert">
-                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <path fill="#991B1B" fill-rule="evenodd"
+                                    d="m6.774 6.4l.812 13.648a.8.8 0 0 0 .798.752h7.232a.8.8 0 0 0 .798-.752L17.226 6.4h1.203l-.817 13.719A2 2 0 0 1 15.616 22H8.384a2 2 0 0 1-1.996-1.881L5.571 6.4zM9.5 9h1.2l.5 9H10zm3.8 0h1.2l-.5 9h-1.2zM4.459 2.353l15.757 2.778a.5.5 0 0 1 .406.58L20.5 6.4L3.758 3.448l.122-.69a.5.5 0 0 1 .579-.405m6.29-1.125l3.94.695a.5.5 0 0 1 .406.58l-.122.689l-4.924-.869l.122-.689a.5.5 0 0 1 .579-.406z" />
                             </svg>
-                            <span class="sr-only">Info</span>
                             <div>
-                                <span class="font-medium">{{ Session::get('okk') }}</span>
+                                <span class="font-medium ml-1">{{ Session::get('okk') }}</span>
                             </div>
                         </div>
                     @endif
 
                     <tbody class="divide-y">
-                        @foreach($guru as $data)
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2">{{$loop->iteration}}</td>
-                            <td class="px-4 py-2">
-                                <div class="flex items-center space-x-2">
-                                    @if ($data->gender == "lk")
-                                    <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" alt="Logo" class="w-6 h-6 rounded-full">
-                                    @endif
+                        @foreach ($guru as $data)
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">{{ $loop->iteration }}</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex items-center space-x-2">
+                                        @if ($data->gender == 'lk')
+                                            <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg"
+                                                alt="Logo" class="w-6 h-6 rounded-full">
+                                        @endif
 
-                                    @if ($data->gender == "pr")
-                                    <img src="https://img.freepik.com/premium-vector/indonesian-senior-high-school-student-cute-girl-character-kawaii-chibi_380474-601.jpg" alt="Logo" class="w-6 h-6 rounded-full">
-
-                                    @endif
-                                    <div>
-                                        <div class="font-medium">{{$data->nama_guru}}</div>
-                                        {{-- <div class="text-gray-500 text-xs">NISN ({{$data->nisn}})</div> --}}
+                                        @if ($data->gender == 'pr')
+                                            <img src="https://img.freepik.com/premium-vector/indonesian-senior-high-school-student-cute-girl-character-kawaii-chibi_380474-601.jpg"
+                                                alt="Logo" class="w-6 h-6 rounded-full">
+                                        @endif
+                                        <div>
+                                            <div class="font-medium">{{ $data->nama_guru }}</div>
+                                            {{-- <div class="text-gray-500 text-xs">NISN ({{$data->nisn}})</div> --}}
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <div class="font-medium">{{$data->no_telp}}</div>
-                                {{-- <div class="text-gray-500 text-xs">Jurusan {{$data->jurusan}}</div> --}}
-                            </td>
-                            <td class="px-4 py-2">
-                                <div class="font-medium">{{$data->gender}}</div>
-                                {{-- <div class="text-gray-500 text-xs">Jurusan {{$data->jurusan}}</div> --}}
-                            </td>
+                                </td>
+                                <td class="px-4 py-2">
+                                    <div class="text-gray-500">{{ $data->no_telp }}</div>
+                                    {{-- <div class="text-gray-500 text-xs">Jurusan {{$data->jurusan}}</div> --}}
+                                </td>
+                                <td class="px-4 py-2">
+                                    <div class="text-gray-500 text-xs">{{ $data->gender == "lk"? "laki-laki":"perempuan" }}</div>
+                                    {{-- <div class="text-gray-500 text-xs">Jurusan {{$data->jurusan}}</div> --}}
+                                </td>
 
-                            <td class="px-4 py-2">
-                                <div class="flex gap-2">
-                                    <a href="/guru/update/{{$data->id}}" class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
-                                        Modify Data
-                                    </a>
+                                <td class="px-4 py-2">
+                                    <div class="flex gap-2">
+                                        <a href="/guru/update/{{ $data->id }}"
+                                            class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+                                            Modify Data
+                                        </a>
 
-                                    <form action="/guru/delete/{{$data->id}}" method="post">
-                                        @csrf
+                                        <form action="/guru/delete/{{ $data->id }}" method="post">
+                                            @csrf
 
-                                        <button onclick="return confirm('Apakah yakin data ingin dihapus?')" type="submit" class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
-                                            Delete Data
-                                        </button>
-                                    </form>
+                                            <button onclick="return confirm('Apakah yakin data ingin dihapus?')"
+                                                type="submit"
+                                                class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+                                                Delete Data
+                                            </button>
+                                        </form>
 
-                                </div>
-                            </td>
+                                    </div>
+                                </td>
 
-                        </tr>
+                            </tr>
                         @endforeach
 
                     </tbody>

@@ -25,10 +25,21 @@
             <div class="flex items-end gap-2  mb-4 ">
 
                 <div class="text-gray-400 text-sm ms-auto">
-                    Menampilkan {{count($peminjaman)}} dari total {{count($peminjaman)}} data
+                    Menampilkan {{ count($peminjaman) }} dari total {{ count($peminjaman) }} data
                 </div>
 
             </div>
+            {{-- alert --}}
+            @if (Session::has('okk'))
+            <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16"><g fill="none" stroke="#166534" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><polyline points="7.25 14.25 2.75 14.25 2.75 1.75 13.25 1.75 13.25 9.25"/><path d="m9.75 12.75 1.5 1.5 3-2.5m-8.5-4h4.5m-4.5 3h1.5m-1.5-6h4.5"/></g></svg>
+                <span class="sr-only">Info</span>
+                <div>
+                    <span class="font-medium ml-1">{{Session::get('okk')}}</span>
+                </div>
+            </div>
+            @endif
 
             <div class="overflow-x-auto rounded border">
                 <table class="min-w-full text-sm text-left">
@@ -45,50 +56,56 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y">
-                        @foreach($peminjaman as $data)
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2">{{$loop->iteration}}</td>
-                            <td class="px-4 py-2">
-                                <div class="flex items-center space-x-2">
-                                    <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg" alt="Logo" class="w-6 h-6 rounded-full">
+                        @foreach ($peminjaman as $data)
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">{{ $loop->iteration }}</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex items-center space-x-2">
+                                        <img src="https://st5.depositphotos.com/89817276/76538/v/450/depositphotos_765381964-stock-illustration-indonesian-junior-high-school-student.jpg"
+                                            alt="Logo" class="w-6 h-6 rounded-full">
 
-                                    @if($data->entitas_peminjam == "Siswa")
-                                    <div>
-                                        <div class="font-medium">{{$data->siswa->nama_siswa}}</div>
-                                        <div class="text-gray-500 text-xs">NISN ({{$data->siswa->nisn}})</div>
+                                        @if ($data->entitas_peminjam == 'Siswa')
+                                            <div>
+                                                <div class="font-medium">{{ $data->siswa->nama_siswa }}</div>
+                                                <div class="text-gray-500 text-xs">NISN ({{ $data->siswa->nisn }})</div>
+                                            </div>
+                                        @else
+                                            <div>
+                                                <div class="font-medium">{{ $data->guru->nama_guru }}</div>
+                                                <div class="text-gray-500 text-xs">No Telepon
+                                                    ({{ $data->guru->no_telp }})</div>
+                                            </div>
+                                        @endif
+
                                     </div>
-                                    @else
-                                    <div>
-                                        <div class="font-medium">{{$data->guru->nama_guru}}</div>
-                                        <div class="text-gray-500 text-xs">No Telepon ({{$data->guru->no_telp}})</div>
+                                </td>
+                                <td class="px-4 py-2">
+                                    <div class="flex items-center space-x-2">
+                                        <img src="{{ $data->barang->foto }}" alt="Logo"
+                                            class="w-6 h-6 rounded-full">
+
+                                        <div>
+                                            <div class="font-medium">{{ $data->barang->nama_brg }}</div>
+                                            <div class="text-gray-500 text-xs">Meminjam Sebanyak
+                                                ({{ $data->jml_pinjam }} buah)</div>
+                                        </div>
+
                                     </div>
-                                    @endif
+                                </td>
+                                <td class="px-4 py-2">
+                                    <div class="font-medium text-xs">Tanggal Pinjam : {{ $data->tgl_pinjam }}</div>
+                                    <div class="text-gray-500 text-xs">Akan Dikembalikan Pada :
+                                        {{ $data->tgl_kembali }}</div>
+                                </td>
 
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <div class="flex items-center space-x-2">
-                                    <img src="{{$data->barang->foto}}" alt="Logo" class="w-6 h-6 rounded-full">
-
-                                    <div>
-                                        <div class="font-medium">{{$data->barang->nama_brg}}</div>
-                                        <div class="text-gray-500 text-xs">Meminjam Sebanyak ({{$data->jml_pinjam}} buah)</div>
+                                <td class="px-4 py-2">
+                                    <div
+                                        class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white text-center transition-all shadow-sm">
+                                        Selesai
                                     </div>
+                                </td>
 
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <div class="font-medium text-xs">Tanggal Pinjam : {{$data->tgl_pinjam}}</div>
-                                <div class="text-gray-500 text-xs">Akan Dikembalikan Pada : {{$data->tgl_kembali}}</div>
-                            </td>
-
-                            <td class="px-4 py-2">
-                                <div class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white text-center transition-all shadow-sm">
-                                    Selesai
-                                </div>
-                            </td>
-
-                            {{-- <td class="px-4 py-2">
+                                {{-- <td class="px-4 py-2">
                                 <div class="flex gap-1 flex-col">
 
                                     <form action="/history/delete/{{$data->id}}" method="post">
@@ -102,7 +119,7 @@
                                 </div>
                             </td> --}}
 
-                        </tr>
+                            </tr>
                         @endforeach
 
                     </tbody>

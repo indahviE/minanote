@@ -17,7 +17,17 @@ class PeminjamanController extends Controller
     public function views_peminjaman(Request $request)
     {
         $peminjaman = peminjaman::with(['siswa', 'guru', 'barang'])->where("status", "Dipinjam")->get();
-        return view('views_peminjaman', ['peminjaman' => $peminjaman]);
+        $total_barang_dipinjam_guru = 0;
+        $total_barang_dipinjam_siswa = 0;
+        $total_barang_dipinjam = 0;
+
+        foreach ($peminjaman as $data){
+            if ($data->entitas_peminjam == "Siswa")
+            {
+                $total_barang_dipinjam_siswa += $data->jml_pinjam;
+            }
+        }
+        return view('views_peminjaman', ['peminjaman' => $peminjaman, "total_barang_dipinjam_siswa"=>$total_barang_dipinjam_siswa]);
     }
 
     public function views_create_peminjaman()
@@ -66,28 +76,28 @@ class PeminjamanController extends Controller
             'stock' => $barang->stock - $request->jml_pinjam
         ]);
 
-        return redirect('/peminjaman')->with('succes', 'Data berhasil dibuat!');
+        return redirect('/peminjaman')->with('succes', 'Peminjaman berhasil ter-catat!');
     }
 
-    public function update_peminjaman(Request $request, $id)
-    {
-        $peminjaman = peminjaman::findOrFail($id);
+    // public function update_peminjaman(Request $request, $id)
+    // {
+    //     $peminjaman = peminjaman::findOrFail($id);
 
-        peminjaman::update([
-            'siswa_id' => $request->siswa_id,
-            'guru_id' => $request->guru_id,
-            'barang_id' => $request->barang_id,
-            'admin_id' => $request->admin_id,
-            'tgl_pinjam' => $request->tgl_pinjam,
-            'tgl_kembali' => $request->tgl_kembali,
-            'jml_pinjam' => $request->jml_pinjam,
-            'status' => $request->status,
-            'entitas_peminjam' => $request->entitas_peminjam,
-            'gender' =>$request->gender
-        ]);
+    //     peminjaman::update([
+    //         'siswa_id' => $request->siswa_id,
+    //         'guru_id' => $request->guru_id,
+    //         'barang_id' => $request->barang_id,
+    //         'admin_id' => $request->admin_id,
+    //         'tgl_pinjam' => $request->tgl_pinjam,
+    //         'tgl_kembali' => $request->tgl_kembali,
+    //         'jml_pinjam' => $request->jml_pinjam,
+    //         'status' => $request->status,
+    //         'entitas_peminjam' => $request->entitas_peminjam,
+    //         'gender' =>$request->gender
+    //     ]);
 
-        return redirect('/peminjaman')->with('ok', 'Data berhasil ter-update!');
-    }
+    //     return redirect('/peminjaman');
+    // }
 
     public function delete_peminjaman(Request $request, $id)
     {
@@ -95,7 +105,7 @@ class PeminjamanController extends Controller
 
         $peminjaman->delete();
 
-        return redirect('/peminjaman')->with('oke', 'Data berhasil terhapus!');
+        return redirect('/peminjaman')->with('oke', 'Peminjaman berhasil ter-hapus!');
     }
 
     public function views_history()
@@ -118,7 +128,7 @@ class PeminjamanController extends Controller
             'stock' => $barang->stock + $peminjaman->jml_pinjam
         ]);
 
-        return redirect('/history');
+        return redirect('/history')->with('okk', 'Barang telah berhasil Dikembalikan, See you!');
     }
 
 }

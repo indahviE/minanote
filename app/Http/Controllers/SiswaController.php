@@ -13,7 +13,7 @@ class SiswaController extends Controller
 
     public function views_siswa(Request $request)
     {
-        
+
         if($request->s){
             $search = $request->s;
             $siswa = siswa::where("nama_siswa", "LIKE", '%' . $search . '%')->get();
@@ -51,7 +51,7 @@ class SiswaController extends Controller
             'gender' => $request->gender
         ]);
 
-        return redirect('/siswa')->with('succes', 'Data berhasil dibuat!');
+        return redirect('/siswa')->with('succes', 'Siswa berhasil ter-catat!');
     }
 
     public function update_siswa(Request $request, $id)
@@ -66,7 +66,7 @@ class SiswaController extends Controller
              'gender' => $request->gender
         ]);
 
-        return redirect('/siswa')->with('ok', 'Data siswa telah ter-update!');
+        return redirect('/siswa')->with('ok', 'Siswa berhasil ter-update!');
     }
 
     public function delete_siswa(Request $request, $id)
@@ -75,6 +75,6 @@ class SiswaController extends Controller
 
         $siswa->delete();
 
-        return redirect('/siswa')->with('okk', 'Data telah terhapus!');
+        return redirect('/siswa')->with('okk', 'Siswa berhasil ter-hapus!');
     }
 }

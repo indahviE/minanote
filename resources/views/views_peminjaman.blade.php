@@ -16,11 +16,68 @@
 
         <div class="w-full p-12 bg-white ms-64">
             <div class="flex justify-between items-center mb-6">
-                <h1 class="text-2xl font-bold">Data Peminjaman</h1>
+                <h1 class="text-3xl font-bold">Data Peminjaman</h1>
                 <!-- <div class="space-x-2">
                 <button class="px-4 py-2 bg-gray-200 text-sm rounded hover:bg-gray-300">Download CSV</button>
                 <button class="px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800">Invite Organization</button>
             </div> -->
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-5">
+
+                <!-- Card Siswa -->
+                <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-gray-500 text-sm font-medium">Barang Dipinjam Siswa</h2>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_barang_dipinjam_siswa}}</p>
+                        </div>
+                        <div class="p-4 bg-blue-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5.121 17.804A9 9 0 1117.805 5.12 9 9 0 015.121 17.804z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Guru -->
+                <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-gray-500 text-sm font-medium">Barang Dipinjam Guru</h2>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">85</p>
+                        </div>
+                        <div class="p-4 bg-green-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 7l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Total -->
+                <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-gray-500 text-sm font-medium">Total Barang Dipinjam</h2>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">205</p>
+                        </div>
+                        <div class="p-4 bg-purple-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2
+                     3-.895 3-2-1.343-2-3-2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6v12h16V6H4z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="flex items-end gap-2  mb-4 ">
 
@@ -56,32 +113,18 @@
 
                     {{-- alert for create --}}
                     @if (Session::has('succes'))
-                        <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                        <div class="flex items-center text-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
                             role="alert">
-                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
+                                <g fill="none" stroke="#166534" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5">
+                                    <polyline points="7.25 14.25 2.75 14.25 2.75 1.75 13.25 1.75 13.25 9.25" />
+                                    <path d="m9.75 12.75 1.5 1.5 3-2.5m-8.5-4h4.5m-4.5 3h1.5m-1.5-6h4.5" />
+                                </g>
                             </svg>
                             <span class="sr-only">Info</span>
                             <div>
-                                <span class="font-medium">{{ Session::get('succes') }}</span>
-                            </div>
-                        </div>
-                    @endif
-
-                    {{-- alert for update --}}
-                    @if (Session::has('ok'))
-                        <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
-                            role="alert">
-                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                            </svg>
-                            <span class="sr-only">Info</span>
-                            <div>
-                                <span class="font-medium">{{ Session::get('ok') }}</span>
+                                <P><span class="font-medium ml-1">{{ Session::get('succes') }}</span></P>
                             </div>
                         </div>
                     @endif
@@ -92,14 +135,12 @@
                     @if (Session::has('oke'))
                         <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
                             role="alert">
-                            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <path fill="#991B1B" fill-rule="evenodd"
+                                    d="m6.774 6.4l.812 13.648a.8.8 0 0 0 .798.752h7.232a.8.8 0 0 0 .798-.752L17.226 6.4h1.203l-.817 13.719A2 2 0 0 1 15.616 22H8.384a2 2 0 0 1-1.996-1.881L5.571 6.4zM9.5 9h1.2l.5 9H10zm3.8 0h1.2l-.5 9h-1.2zM4.459 2.353l15.757 2.778a.5.5 0 0 1 .406.58L20.5 6.4L3.758 3.448l.122-.69a.5.5 0 0 1 .579-.405m6.29-1.125l3.94.695a.5.5 0 0 1 .406.58l-.122.689l-4.924-.869l.122-.689a.5.5 0 0 1 .579-.406z" />
                             </svg>
-                            <span class="sr-only">Info</span>
                             <div>
-                                <span class="font-medium">{{Session::get('oke')}}</span>
+                                <span class="font-medium ml-1">{{ Session::get('oke') }}</span>
                             </div>
                         </div>
                     @endif
@@ -124,7 +165,8 @@
                                         @if ($data->entitas_peminjam == 'Siswa')
                                             <div>
                                                 <div class="font-medium">{{ $data->siswa->nama_siswa }}</div>
-                                                <div class="text-gray-500 text-xs">NISN ({{ $data->siswa->nisn }})</div>
+                                                <div class="text-gray-500 text-xs">NISN ({{ $data->siswa->nisn }})
+                                                </div>
                                             </div>
                                         @else
                                             <div>
@@ -179,7 +221,8 @@
                                         <form action="/peminjaman/delete/{{ $data->id }}" method="post">
                                             @csrf
 
-                                            <button onclick="return confirm('Apakah yakin data ingin dihapus?')" type="submit"
+                                            <button onclick="return confirm('Apakah yakin data ingin dihapus?')"
+                                                type="submit"
                                                 class="rounded-md bg-pink-600 py-0.5 px-4 border border-transparent text-sm text-white transition-all shadow-sm">
                                                 Delete Data
                                             </button>
