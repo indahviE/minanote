@@ -29,7 +29,7 @@ bg-white">
     <nav class="space-x-6 hidden md:flex">
       <a href="#home" class="text-gray-700 hover:text-blue-600">Beranda</a>
       <a href="#kenapa-kami" class="text-gray-700 hover:text-blue-600">Kenapa Kami?</a>
-      <a href="#barang" class="text-gray-700 hover:text-blue-600">Barang Kami</a>
+      <a href="#barang-kami" class="text-gray-700 hover:text-blue-600">Barang Kami</a>
 
     </nav>
     <div class="flex items-center space-x-4">
@@ -40,6 +40,7 @@ bg-white">
         @csrf
         <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-full text-sm">Log out</button>
       </form>
+      <a href="/siswa" class="text-sm text-blue-600 font-semibold">Pergi Ke Dashboard</a>
       @else
       <a href="/login">
         <button class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm">Login</button>

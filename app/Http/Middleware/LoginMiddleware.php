@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AuthMiddleware
+class LoginMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,8 +17,10 @@ class AuthMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $user = Auth::user(); // simpan data login di dalam pariabel
-        if(!$user) return redirect('/login'); // pengecekan kalo kosong nnti diarahin ke halaman login
-        return $next($request); // artinya middleware aman, dan bisa akses controller
+        $user = Auth::user();
+
+        if(!$user) return redirect('/login');
+
+        return $next($request);
     }
 }

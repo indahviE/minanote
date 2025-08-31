@@ -10,7 +10,7 @@
 <body class="bg-gray-50 gap-6  flex">
     @include('components.sidebar')
 
-    <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8 ms-64">
+    <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8 ms-72">
 
         <!-- Form Section -->
         <div class="w-full">
@@ -79,8 +79,9 @@
 
                 <div class="pt-2">
                     <button type="submit" class="bg-blue-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-blue-700 transition-all">Submit Data</button>
-
-                    <a href="/barang" class="text-sm text-gray-500 px-6 py-2 font-bold transition-all">Kembali</a>
+                    <a href="/barang" class="bg-gray-300 text-sm text-gray-800 px-6 py-2 font-semibold rounded hover:bg-gray-400 transition-all">Cancel</a>
+                </div>
+                <div class="pt-2">
                 </div>
 
             </form>
