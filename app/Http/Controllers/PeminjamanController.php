@@ -21,17 +21,16 @@ class PeminjamanController extends Controller
         $total_barang_dipinjam_siswa = 0;
         $total_barang_dipinjam = 0;
 
-        foreach ($peminjaman as $data){
-            if ($data->entitas_peminjam == "Siswa")
-            {
+        foreach ($peminjaman as $data) {
+            if ($data->entitas_peminjam == "Siswa") {
                 $total_barang_dipinjam_siswa += $data->jml_pinjam; // mengambil berapa banyak barang dalam sekali peminjaman
-            }else{
+            } else {
                 $total_barang_dipinjam_guru += $data->jml_pinjam;
             }
-            
+
             $total_barang_dipinjam += $data->jml_pinjam;
         }
-        return view('views_peminjaman', ['peminjaman' => $peminjaman, "total_barang_dipinjam_siswa"=>$total_barang_dipinjam_siswa, 'total_barang_dipinjam_guru' => $total_barang_dipinjam_guru, "total_barang_dipinjam" => $total_barang_dipinjam]);
+        return view('views_peminjaman', ['peminjaman' => $peminjaman, "total_barang_dipinjam_siswa" => $total_barang_dipinjam_siswa, 'total_barang_dipinjam_guru' => $total_barang_dipinjam_guru, "total_barang_dipinjam" => $total_barang_dipinjam]);
     }
 
     public function views_create_peminjaman()
@@ -50,6 +49,14 @@ class PeminjamanController extends Controller
     //post
     public function create_peminjaman(Request $request)
     {
+
+        // Cek apakah tgl_pinjam lebih kecil dari hari ini
+        // kalo hari ini 3 sept. dan kita input 31 Agustus -> maka 
+        // 31 agustus lebih kecil dari 3 sept. jika true maka kita tendang ke halaman create karena mnginput waktu yang sudah lampau
+        if (strtotime($request->tgl_pinjam) < strtotime("today") || strtotime($request->tgl_kembali) < strtotime("today")) {
+            return redirect('/peminjaman/create')->with('err', 'Tanggal peminjaman tidak boleh diinput tanggal yang sudah lewat.');
+        }
+
         // lakukan pengecekan dahulu
         // cek apakah stok yang diminta cukup
         $barang = barang::findOrFail($request->barang_id);
@@ -57,6 +64,7 @@ class PeminjamanController extends Controller
 
         if ($request->jml_pinjam > $barang->stock)
             return redirect('/peminjaman/create')->with('err', 'Permintaan Jumlah Pinjam tidak valid dengan stock yang tersedia');
+
 
         // cek yang minjem guru or siswa
         if ($request->entitas_peminjam == "Siswa") $request['guru_id'] = null;
@@ -72,7 +80,7 @@ class PeminjamanController extends Controller
             'jml_pinjam' => $request->jml_pinjam,
             'status' => "Dipinjam",
             'entitas_peminjam' => $request->entitas_peminjam,
-            'gender' =>$request->gender
+            'gender' => $request->gender
         ]);
 
         // jika sudah pinjam maka kurangi stok barang
@@ -134,5 +142,4 @@ class PeminjamanController extends Controller
 
         return redirect('/history')->with('okk', 'Barang telah berhasil Dikembalikan, See you!');
     }
-
 }

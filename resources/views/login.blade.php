@@ -16,7 +16,7 @@
            <div class="bg-white rounded-3xl shadow-lg flex max-w-5xl w-full overflow-hidden">
 
                 <!-- Left Side (Form) -->
-                <div class="w-full md:w-1/2 p-10">
+                <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
                     <div class="flex items-center mb-8">
                         <div class=" mr-2"> <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
                                 class="w-6 h-6" alt="Logo"></div>

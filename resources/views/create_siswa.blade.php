@@ -18,31 +18,28 @@
             <div class=" text-sm mt-2 mb-4 text-gray-600">Masukan Data dengan valid dan benar!</div>
             <form class="space-y-4" method="post" action="/siswa/create">
                 @csrf
-                <div>
-                    <label class="block text-sm font-medium text-gray-400">Nama Siswa</label>
-                    <input type="text" name="nama_siswa" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama siswa.." required>
+                <div class="flex gap-4">
+                    <div class="w-full">
+                        <label class="block text-sm font-medium text-gray-400">Nama Siswa</label>
+                        <input type="text" name="nama_siswa" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama siswa.." required>
+                    </div>
+                    <div class="w-full">
+                        <label class="block text-sm font-medium text-gray-400">NISN Siswa</label>
+                        <input type="text" name="nisn" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa.." required>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-400">NISN Siswa</label>
-                    <input type="text" name="nisn" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa.." required>
-                </div>
+
                 <div>
                     <div>
                         <label class="block text-sm font-medium text-gray-400">Gender</label>
-                     <select name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
-                        <option class="text-sm text-gray-500">pilih gender</option>
-                        <option value="lk">laki-laki</option>
-                        <option value="pr">perempuan</option>
-                    </select>
+                        <select name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                            <option class="text-sm text-gray-500">pilih gender</option>
+                            <option value="lk">laki-laki</option>
+                            <option value="pr">perempuan</option>
+                        </select>
                     </div>
-                    <div>
-                    <label class="block text-sm font-medium text-gray-400">Kelas Siswa</label>
-                    <input type="text" name="kelas" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas.." required>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-400">Jurusan Siswa</label>
-                    <input type="text" name="jurusan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama jurusan.." required>
-                </div>
+
 
 
                 <!-- <div class="grid grid-cols-2 gap-4">
@@ -71,13 +68,25 @@
                     <label class="block text-sm font-medium text-gray-400">Description</label>
                     <textarea class="w-full mt-1 border border-gray-300 rounded px-3 py-2" rows="3" placeholder="Type description here..."></textarea>
                 </div> -->
+                <div class="flex gap-4">
+                    <div class="w-full">
+                        <label class="block text-sm font-medium text-gray-400">Kelas Siswa</label>
+                        <input type="text" name="kelas" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas.." required>
+                    </div>
+                    <div class="w-full">
+                        <label class="block text-sm font-medium text-gray-400">Jurusan Siswa</label>
+                        <input type="text" name="jurusan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama jurusan.." required>
+                    </div>
 
+
+                </div>
 
                 <div class="pt-2">
                     <button type="submit" class="bg-blue-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-blue-700 transition-all">Submit Data</button>
                     <a href="/siswa" class="bg-gray-300 text-sm text-gray-800 px-6 py-2 font-semibold rounded hover:bg-gray-400 transition-all">Cancel</a>
 
                 </div>
+
 
             </form>
         </div>

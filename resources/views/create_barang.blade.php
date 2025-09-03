@@ -22,38 +22,39 @@
                     <label class="block text-sm font-medium text-gray-400">Nama Barang</label>
                     <input type="text" name="nama_barang" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama barang.." required>
                 </div>
-                 <div class="md:w-1/2 px-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                    fore="grid-last-name">
-                    Foto
-                </label>
-                <input type="file" name="file_foto"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                    id="grid-last-name" placeholder="">
-            </div>
+                <div class="md:w-1/2 px-3">
+                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                        fore="grid-last-name">
+                        Foto
+                    </label>
+                    <input type="file" name="file_foto"
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+                        id="grid-last-name" placeholder="">
+                </div>
         </div>
-                {{-- <div>
+        {{-- <div>
                     <label class="block text-sm font-medium text-gray-400">Foto</label>
                     <input type="file_foto" name="foto" type="file" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="">
                 </div> --}}
-                <div>
-                    <label class="block text-sm font-medium text-gray-400">Stock</label>
-                    <input min="1" type="number" name="stock" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan stock.." required>
-                </div>
-                <div>
-                       <label class="block text-sm font-medium text-gray-400">Kelayakan</label>
-                     <select name="kelayakan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
-                        <option class="text-sm text-gray-500"></option>
-                        <option value="baik">Baik</option>
-                        <option value="rusak ringan">Rusak Ringan</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-400">Deskripsi</label>
-                    <input type="text" name="deskripsi" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan deskripsi.." required>
-                </div>
+        <div class="flex gap-4">
+            <div class="w-full">
+                <label class="block text-sm font-medium text-gray-400">Stock</label>
+                <input min="1" type="number" name="stock" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan stock.." required>
+            </div>
+            <div class="w-full">
+                <label class="block text-sm font-medium text-gray-400">Kelayakan</label>
+                <select name="kelayakan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                    <option value="baik">Baik</option>
+                    <option value="rusak ringan">Rusak Ringan</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-400">Deskripsi</label>
+            <textarea type="text" name="deskripsi" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan deskripsi.." required></textarea>
+        </div>
 
-                <!-- <div class="grid grid-cols-2 gap-4">
+        <!-- <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-400">Category</label>
                         <select class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2">
@@ -70,7 +71,7 @@
                     </div>
                 </div> -->
 
-                <!-- <div>
+        <!-- <div>
                     <label class="block text-sm font-medium text-gray-400">Price</label>
                     <input type="number" class="w-full mt-1 border border-gray-300 rounded px-3 py-2" placeholder="$175">
                 </div>
@@ -81,15 +82,15 @@
                 </div> -->
 
 
-                <div class="pt-2">
-                    <button type="submit" class="bg-blue-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-blue-700 transition-all">Submit Data</button>
-                    <a href="/barang" class="bg-gray-300 text-sm text-gray-800 px-6 py-2 font-semibold rounded hover:bg-gray-400 transition-all">Cancel</a>
-                </div>
-                <div class="pt-2">
-                </div>
-
-            </form>
+        <div class="pt-2">
+            <button type="submit" class="bg-blue-600 text-sm text-white px-6 py-2 font-semibold rounded hover:bg-blue-700 transition-all">Submit Data</button>
+            <a href="/barang" class="bg-gray-300 text-sm text-gray-800 px-6 py-2 font-semibold rounded hover:bg-gray-400 transition-all">Cancel</a>
         </div>
+        <div class="pt-2">
+        </div>
+
+        </form>
+    </div>
     </div>
 
 </body>

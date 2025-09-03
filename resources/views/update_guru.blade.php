@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Update - Guru</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Update - Guru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-    <body class="bg-gray-50 gap-6  flex ">
-        @include('components.sidebar')
+<body class="bg-gray-50 gap-6  flex ">
+    @include('components.sidebar')
 
-        <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8 ms-72">
+    <div class=" p-10 my-6 w-6/12 bg-white shadow-md rounded-xl p-8 grid gap-8 ms-72">
 
-            <!-- Form Section -->
+        <!-- Form Section -->
         <div class="w-full">
             <h2 class="text-xl font-semibold">Formulir Modify Data Guru</h2>
             <div class=" text-sm mt-2 mb-4 text-gray-600">Masukan Data dengan valid dan benar!</div>
@@ -28,7 +28,16 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Gender</label>
-                    <input type="text" name="gender" value="{{$data->gender}}" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr..">
+                    <select name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                        <option class="text-sm text-gray-500">pilih gender</option>
+                        @if($data->gender == "lk")
+                            <option value="lk" selected>laki-laki</option>
+                            <option value="pr">perempuan</option>
+                        @else
+                            <option value="lk">laki-laki</option>
+                            <option value="pr" selected>perempuan</option>
+                        @endif
+                    </select>
                 </div>
 
                 <!-- <div class="grid grid-cols-2 gap-4">

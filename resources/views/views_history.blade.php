@@ -95,7 +95,7 @@
                                 </td>
                                 <td class="px-4 py-2">
                                     <div class="font-medium text-xs">Tanggal Pinjam : {{ $data->tgl_pinjam }}</div>
-                                    <div class="text-gray-500 text-xs">Akan Dikembalikan Pada :
+                                    <div class="text-gray-500 text-xs">Telah Dikembalikan Pada :
                                         {{ $data->tgl_kembali }}</div>
                                 </td>
 

@@ -16,7 +16,7 @@
         <div class="bg-white rounded-3xl shadow-lg flex max-w-5xl w-full overflow-hidden">
 
             <!-- Left Side (Form) -->
-            <div class="w-full md:w-1/2 p-10">
+            <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
                 <div class="flex items-center mb-8">
                     <div class=" mr-2"> <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
                             class="w-6 h-6" alt="Logo"></div>
@@ -24,7 +24,7 @@
                 </div>
 
                 <h1 class="text-2xl font-bold text-gray-800 mb-2">Holla, Nice to meet you.</h1>
-                <p class="text-gray-500 mb-8 text-sm">Belum punya akun? segera mendaftar!</p>
+                <p class="text-gray-500 mb-8 text-sm">Belum punya akun? segera mendaftar sekarang juga!</p>
 
                 <div>
                     <div class="mb-4">
