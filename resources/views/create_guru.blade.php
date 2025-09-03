@@ -27,8 +27,12 @@
                     <input type="text" name="no_telp" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan no telp.." required>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-400">Gender</label>
-                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr.." required>
+                       <label class="block text-sm font-medium text-gray-400">Gender</label>
+                     <select name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                        <option class="text-sm text-gray-500">pilih gender</option>
+                        <option value="lk">laki-laki</option>
+                        <option value="pr">perempuan</option>
+                    </select>
                 </div>
                         <!-- <div class="grid grid-cols-2 gap-4">
                         <label class="block text-sm font-medium text-gray-400">Category</label>

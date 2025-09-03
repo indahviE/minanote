@@ -34,11 +34,7 @@
                             <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_guru_laki2}}</p>
                         </div>
                         <div class="p-4 bg-blue-100 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A9 9 0 1117.805 5.12 9 9 0 015.121 17.804z" />
-                            </svg>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 28 28"><path fill="#2563EB" d="M9.5 14a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9m7.6 7.619c.763.235 1.714.381 2.9.381c6 0 6-3.75 6-3.75A2.25 2.25 0 0 0 23.75 16h-6.656a3.24 3.24 0 0 1 .904 2.25v.555l-.003.083a5.5 5.5 0 0 1-.154.99a6.1 6.1 0 0 1-.74 1.74M23.5 10.5a3.5 3.5 0 1 1-7 0a3.5 3.5 0 0 1 7 0M2 18.25A2.25 2.25 0 0 1 4.25 16h10.5A2.25 2.25 0 0 1 17 18.25v.5S17 24 9.5 24S2 18.75 2 18.75z"/></svg>
                         </div>
                     </div>
                 </div>
@@ -51,11 +47,7 @@
                             <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_guru_perempuan}}</p>
                         </div>
                         <div class="p-4 bg-green-100 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 14l9-5-9-5-9 5 9 5zm0 7l9-5-9-5-9 5 9 5z" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32"><path fill="#16A34A" d="M7 10.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0M10.5 5a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11M21 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0m2-4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M2 21a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3v.226a3 3 0 0 1-.02.279c-.02.173-.057.408-.13.686a5.6 5.6 0 0 1-.999 2.017C16.681 25.71 14.48 27 10.5 27s-6.18-1.29-7.351-2.792a5.6 5.6 0 0 1-1-2.017a5 5 0 0 1-.146-.898l-.002-.067v-.023L2 21.195zm2 .178v.012q0 .026.009.094c.01.09.031.23.076.404c.09.348.273.818.641 1.291C5.431 23.883 6.98 25 10.5 25s5.07-1.117 5.774-2.02a3.6 3.6 0 0 0 .64-1.292A3 3 0 0 0 17 21.19l.001-.012V21a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1zm15.477 3.314c.93.316 2.087.508 3.523.508c3.201 0 5.02-.953 6.013-2.125c.483-.57.73-1.148.855-1.592a3.7 3.7 0 0 0 .129-.729l.001-.036l.001-.022v-.038A2.457 2.457 0 0 0 27.542 18h-8.189c.5.559.863 1.243 1.035 2h7.154c.25 0 .452.199.458.446l-.004.044a2 2 0 0 1-.052.25c-.062.22-.19.528-.457.843C26.98 22.182 25.799 23 23 23c-1.165 0-2.049-.142-2.721-.35a7 7 0 0 1-.802 1.842"/></svg>
                         </div>
                     </div>
                 </div>
@@ -68,13 +60,7 @@
                             <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_guru}}</p>
                         </div>
                         <div class="p-4 bg-purple-100 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2
-                     3-.895 3-2-1.343-2-3-2z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6v12h16V6H4z" />
-                            </svg>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 20 20"><g fill="#9333EA" fill-rule="evenodd" clip-rule="evenodd"><path d="M4.75 4c0-.69.56-1.25 1.25-1.25h10c.69 0 1.25.56 1.25 1.25v14a1.25 1.25 0 0 1-2.137.881L11 14.741l-4.113 4.14A1.25 1.25 0 0 1 4.75 18zm2.5 1.25v9.718l2.863-2.882a1.25 1.25 0 0 1 1.774 0l2.863 2.882V5.25z" opacity="0.2"/><path d="M4.5 3a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.855.352L10 12.676l-4.645 4.676A.5.5 0 0 1 4.5 17zm1 .5v12.287l4.145-4.172a.5.5 0 0 1 .71 0l4.145 4.172V3.5z"/></g></svg>
                         </div>
                     </div>
                 </div>
@@ -163,9 +149,9 @@
                     @endif
 
                     <tbody class="divide-y">
-                        @foreach ($guru as $data)
+                        @foreach ($guru as $index => $data)
                             <tr class="hover:bg-gray-50">
-                                <td class="px-4 py-2">{{ $loop->iteration }}</td>
+                                <td class="px-4 py-2">{{ $guru-> firstItem() + $index }}</td>
                                 <td class="px-4 py-2">
                                     <div class="flex items-center space-x-2">
                                         @if ($data->gender == 'lk')
@@ -218,7 +204,7 @@
                     </tbody>
                 </table>
             </div>
-
+            {{ $guru->links('pagination::tailwind') }}
             <div class="mt-4 flex justify-between items-center text-sm text-gray-600">
 
                 <div>

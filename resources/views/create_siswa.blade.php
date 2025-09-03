@@ -27,16 +27,21 @@
                     <input type="text" name="nisn" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nisn siswa.." required>
                 </div>
                 <div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400">Gender</label>
+                     <select name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                        <option class="text-sm text-gray-500">pilih gender</option>
+                        <option value="lk">laki-laki</option>
+                        <option value="pr">perempuan</option>
+                    </select>
+                    </div>
+                    <div>
                     <label class="block text-sm font-medium text-gray-400">Kelas Siswa</label>
                     <input type="text" name="kelas" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama kelas.." required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Jurusan Siswa</label>
                     <input type="text" name="jurusan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan nama jurusan.." required>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-400">Gender Siswa</label>
-                    <input type="text" name="gender" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan gender lk/pr.." required>
                 </div>
 
 

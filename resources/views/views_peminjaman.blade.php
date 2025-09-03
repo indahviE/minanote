@@ -26,7 +26,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-5">
 
-                <!-- Card Siswa -->
+                <!-- Card total Siswa -->
                 <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
                     <div class="flex items-center justify-between">
                         <div>
@@ -34,16 +34,12 @@
                             <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_barang_dipinjam_siswa}}</p>
                         </div>
                         <div class="p-4 bg-blue-100 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A9 9 0 1117.805 5.12 9 9 0 015.121 17.804z" />
-                            </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 48 48"><path fill="none" stroke="#2563EB" stroke-linecap="round" stroke-linejoin="round" d="M25.466 27.058c0 3.984-3.04 6.273-6.79 5.113s-6.79-5.33-6.79-9.313h0c0-3.984 3.04-6.274 6.79-5.114h0c3.75 1.16 6.79 5.33 6.79 9.314" stroke-width="1"/><path fill="none" stroke="#2563EB" stroke-linecap="round" stroke-linejoin="round" d="M23.086 26.223c0 1.61-.833 2.906-2.185 3.398c-1.352.491-3.017.105-4.368-1.014c-1.352-1.12-2.185-2.801-2.185-4.412m2.449-15.763l.235 4.916m17.216 2.693l-.469 23.527M4.5 11.593l12.297-3.161L43.5 11.359" stroke-width="1"/><path fill="none" stroke="#2563EB" stroke-linecap="round" stroke-linejoin="round" d="m4.5 11.593l2.108 19.781l27.171 8.194l9.135-7.96l.586-20.249l-9.252 4.682z" stroke-width="1"/><path fill="#2563EB" d="M21.057 22.81c0 .397-.303.626-.678.51c-.374-.116-.677-.532-.677-.93s.303-.626.677-.51s.678.532.678.93m-4.484-1.094c0 .398-.304.626-.678.51s-.678-.532-.678-.93c0-.397.304-.625.678-.51c.374.116.678.532.678.93"/></svg>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card Guru -->
+                <!-- Card total Guru -->
                 <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
                     <div class="flex items-center justify-between">
                         <div>
@@ -51,11 +47,7 @@
                             <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_barang_dipinjam_guru}}</p>
                         </div>
                         <div class="p-4 bg-green-100 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 14l9-5-9-5-9 5 9 5zm0 7l9-5-9-5-9 5 9 5z" />
-                            </svg>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 48 48"><path fill="none" stroke="#16A34A" stroke-linecap="round" stroke-linejoin="round" d="M25.466 27.058c0 3.984-3.04 6.273-6.79 5.113s-6.79-5.33-6.79-9.313h0c0-3.984 3.04-6.274 6.79-5.114h0c3.75 1.16 6.79 5.33 6.79 9.314" stroke-width="1"/><path fill="none" stroke="#16A34A" stroke-linecap="round" stroke-linejoin="round" d="M23.086 26.223c0 1.61-.833 2.906-2.185 3.398c-1.352.491-3.017.105-4.368-1.014c-1.352-1.12-2.185-2.801-2.185-4.412m2.449-15.763l.235 4.916m17.216 2.693l-.469 23.527M4.5 11.593l12.297-3.161L43.5 11.359" stroke-width="1"/><path fill="none" stroke="#16A34A" stroke-linecap="round" stroke-linejoin="round" d="m4.5 11.593l2.108 19.781l27.171 8.194l9.135-7.96l.586-20.249l-9.252 4.682z" stroke-width="1"/><path fill="#16A34A" d="M21.057 22.81c0 .397-.303.626-.678.51c-.374-.116-.677-.532-.677-.93s.303-.626.677-.51s.678.532.678.93m-4.484-1.094c0 .398-.304.626-.678.51s-.678-.532-.678-.93c0-.397.304-.625.678-.51c.374.116.678.532.678.93"/></svg>
                         </div>
                     </div>
                 </div>
@@ -68,13 +60,7 @@
                             <p class="text-3xl font-bold text-gray-800 mt-2">{{$total_barang_dipinjam}}</p>
                         </div>
                         <div class="p-4 bg-purple-100 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2
-                     3-.895 3-2-1.343-2-3-2z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6v12h16V6H4z" />
-                            </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><g fill="none"><path stroke="#9333EA" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11 12l8.073-4.625M11 12L6.963 9.688M11 12v2.281m8.073-6.906a3.17 3.17 0 0 0-1.165-1.156L15.25 4.696m3.823 2.679c.275.472.427 1.015.427 1.58v1.608M2.926 7.374a3.14 3.14 0 0 0-.426 1.58v6.09c0 1.13.607 2.172 1.592 2.736l5.316 3.046A3.2 3.2 0 0 0 11 21.25M2.926 7.375a3.17 3.17 0 0 1 1.166-1.156l5.316-3.046a3.2 3.2 0 0 1 3.184 0l2.658 1.523M2.926 7.375l4.037 2.313m0 0l8.287-4.992"/><path fill="#9333EA" fill-rule="evenodd" d="M17.5 23a5.5 5.5 0 1 0 0-11a5.5 5.5 0 0 0 0 11m0-8.993a.5.5 0 0 1 .5.5V17h2.493a.5.5 0 1 1 0 1H18v2.493a.5.5 0 1 1-1 0V18h-2.493a.5.5 0 1 1 0-1H17v-2.493a.5.5 0 0 1 .5-.5" clip-rule="evenodd"/></g></svg>
                         </div>
                     </div>
                 </div>

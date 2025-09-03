@@ -38,11 +38,15 @@
                 </div> --}}
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Stock</label>
-                    <input type="number" name="stock" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan stock.." required>
+                    <input min="1" type="number" name="stock" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan stock.." required>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-400">Kelayakan</label>
-                    <input type="text" name="kelayakan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan kondisi.." required>
+                       <label class="block text-sm font-medium text-gray-400">Kelayakan</label>
+                     <select name="kelayakan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                        <option class="text-sm text-gray-500"></option>
+                        <option value="baik">Baik</option>
+                        <option value="rusak ringan">Rusak Ringan</option>
+                    </select>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400">Deskripsi</label>

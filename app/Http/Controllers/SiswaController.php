@@ -16,9 +16,11 @@ class SiswaController extends Controller
 
         if($request->s){
             $search = $request->s;
-            $siswa = siswa::where("nama_siswa", "LIKE", '%' . $search . '%')->get();
+            $siswa = siswa::where("nama_siswa", "LIKE", '%' . $search . '%')
+            ->paginate(5)
+            ->appends(['s' => $search]);
         }else{
-            $siswa = siswa::all();
+            $siswa = siswa::paginate(5);
             $search = "";
         }
 

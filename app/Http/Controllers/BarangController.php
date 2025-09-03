@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\barang;
 use App\Models\peminjaman;
+use App\Models\siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,9 +17,11 @@ class BarangController extends Controller
 
         if ($request->s) {
             $search = $request->s;
-            $barang = barang::where("nama_barang", "LIKE", '%' . $search . '%')->get();
+            $barang = barang::where("nama_barang", "LIKE", '%' . $search . '%')
+            ->paginate(5)
+            ->appends(['s' => $search]);
         } else {
-            $barang = barang::all();
+            $barang = barang::paginate(5);
             $search = "";
         }
 

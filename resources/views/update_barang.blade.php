@@ -32,8 +32,12 @@
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-400">Kelayakan</label>
-                    <input type="text" name="kelayakan" value="{{$data->kelayakan}}" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2" placeholder="Masukan kondisi..">
+                      <label class="block text-sm font-medium text-gray-400">Kelayakan</label>
+                     <select name="Kelayakan" class="w-full mt-1 border border-gray-300 rounded-xl px-3 py-2 text-gray-600">
+                        <option class="text-sm text-gray-500"></option>
+                        <option value="baik">Baik</option>
+                        <option value="rusak">Rusak Sedikit</option>
+                    </select>
                 </div>
 
                 <div>

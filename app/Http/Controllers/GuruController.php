@@ -17,9 +17,11 @@ class GuruController extends Controller
 
         if ($request->g) {
             $search = $request->g;
-            $guru = guru::where("nama_guru", "LIKE", '%' . $search . '%')->get();
+            $guru = guru::where("nama_guru", "LIKE", '%' . $search . '%')
+            ->paginate(5)
+            ->appends(['s'=> $search]);
         } else {
-            $guru = guru::all();
+            $guru = guru::paginate(5);
             $search = "";
         }
 
